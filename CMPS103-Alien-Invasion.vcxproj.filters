@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ArmyUnits\ArmyUnit.h" />
+    <ClInclude Include="ArmyUnits\Earth\EarthTank.h" />
+    <ClInclude Include="ArmyUnits\Earth\EarthSoldier.h" />
+    <ClInclude Include="ArmyUnits\Earth\EarthGunnery.h" />
+    <ClInclude Include="ArmyUnits\Alien\AlienDrone.h" />
+    <ClInclude Include="ArmyUnits\Alien\AlienMonster.h" />
+    <ClInclude Include="ArmyUnits\Alien\AlienSoldier.h" />
+    <ClInclude Include="FieldController.h" />
+    <ClInclude Include="GameMode.h" />
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Output.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArmyUnits\ArmyUnit.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\EarthSoldier.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\EarthTank.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\EarthGunnery.cpp" />
+    <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
+    <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
+    <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />
+    <ClCompile Include="FieldController.cpp" />
+    <ClCompile Include="GameMode.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Output.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>
