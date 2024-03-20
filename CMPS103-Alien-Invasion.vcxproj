@@ -134,13 +134,13 @@
     <ClInclude Include="ArmyUnits\Earth\EarthGunnery.h" />
     <ClInclude Include="ArmyUnits\Earth\EarthSoldier.h" />
     <ClInclude Include="ArmyUnits\Earth\EarthTank.h" />
-    <ClInclude Include="FieldController.h" />
-    <ClInclude Include="GameMode.h" />
+    <ClInclude Include="GameRules.h" />
     <ClInclude Include="Generator.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Output.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ADS\Node.cpp" />
+    <ClCompile Include="ADS\Queue.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />
@@ -148,12 +148,10 @@
     <ClCompile Include="ArmyUnits\Earth\EarthGunnery.cpp" />
     <ClCompile Include="ArmyUnits\Earth\EarthSoldier.cpp" />
     <ClCompile Include="ArmyUnits\Earth\EarthTank.cpp" />
-    <ClCompile Include="FieldController.cpp" />
-    <ClCompile Include="GameMode.cpp" />
+    <ClCompile Include="GameRules.cpp" />
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Output.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
