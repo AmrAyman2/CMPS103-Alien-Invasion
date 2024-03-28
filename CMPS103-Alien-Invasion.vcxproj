@@ -127,6 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ADS\ArrayStack.h" />
+    <ClInclude Include="ADS\LinkedQueue.h" />
+    <ClInclude Include="ADS\Node.h" />
+    <ClInclude Include="ADS\priNode.h" />
+    <ClInclude Include="ADS\priQueue.h" />
+    <ClInclude Include="ADS\QueueADT.h" />
+    <ClInclude Include="ADS\StackADT.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienDrone.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienMonster.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienSoldier.h" />
@@ -134,13 +141,12 @@
     <ClInclude Include="ArmyUnits\Earth\EarthGunnery.h" />
     <ClInclude Include="ArmyUnits\Earth\EarthSoldier.h" />
     <ClInclude Include="ArmyUnits\Earth\EarthTank.h" />
+    <ClInclude Include="EarthArmy.h" />
     <ClInclude Include="GameRules.h" />
     <ClInclude Include="Generator.h" />
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ADS\Node.cpp" />
-    <ClCompile Include="ADS\Queue.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />
@@ -148,6 +154,7 @@
     <ClCompile Include="ArmyUnits\Earth\EarthGunnery.cpp" />
     <ClCompile Include="ArmyUnits\Earth\EarthSoldier.cpp" />
     <ClCompile Include="ArmyUnits\Earth\EarthTank.cpp" />
+    <ClCompile Include="EarthArmy.cpp" />
     <ClCompile Include="GameRules.cpp" />
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -155,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ID.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
