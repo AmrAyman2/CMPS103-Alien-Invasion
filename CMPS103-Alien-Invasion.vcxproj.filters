@@ -11,6 +11,14 @@
     <ClInclude Include="Generator.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="GameRules.h" />
+    <ClInclude Include="EarthArmy.h" />
+    <ClInclude Include="ADS\priNode.h" />
+    <ClInclude Include="ADS\ArrayStack.h" />
+    <ClInclude Include="ADS\LinkedQueue.h" />
+    <ClInclude Include="ADS\Node.h" />
+    <ClInclude Include="ADS\priQueue.h" />
+    <ClInclude Include="ADS\QueueADT.h" />
+    <ClInclude Include="ADS\StackADT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArmyUnits\ArmyUnit.cpp" />
@@ -24,8 +32,12 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameRules.cpp" />
+    <ClCompile Include="EarthArmy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ID.txt" />
   </ItemGroup>
 </Project>
