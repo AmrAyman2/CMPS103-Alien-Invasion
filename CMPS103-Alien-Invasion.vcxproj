@@ -139,8 +139,6 @@
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ADS\Node.cpp" />
-    <ClCompile Include="ADS\Queue.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />

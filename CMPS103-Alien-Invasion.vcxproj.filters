@@ -24,8 +24,6 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameRules.cpp" />
-    <ClCompile Include="ADS\Node.cpp" />
-    <ClCompile Include="ADS\Queue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
