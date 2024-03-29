@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArmyUnits",
+    "\\ArmyUnits\\Earth"
   ],
+  "SelectedNode": "\\ArmyUnits\\Earth\\EarthTank.cpp",
   "PreviewInSolutionExplorer": false
 }
