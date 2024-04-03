@@ -21,8 +21,8 @@ int ArmyUnit::getJoinTime() const {
     return TJ;
 }
 
-int ArmyUnit::getHealth() const {
-    return health;
+int* ArmyUnit::getHealth(){
+    return &health;
 }
 
 int ArmyUnit::getPower() const {
