@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ADS\ArrayStack.h" />
+    <ClInclude Include="ADS\Deque.h" />
     <ClInclude Include="ADS\LinkedQueue.h" />
     <ClInclude Include="ADS\Node.h" />
     <ClInclude Include="ADS\priNode.h" />
