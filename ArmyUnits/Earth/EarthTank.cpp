@@ -3,7 +3,7 @@
 // Attack function of unit tank gets the required number of monsters and reduces its health
 // if dead its sent to dead list, else its ent to temp list
 // after the tank finishes attacking, monsters in templist are sent back to monsterlist
-void EarthTank::Attack()
+void EarthTank::AttackNor()
 {
 	for (int i = 0; i < attackCapacity; i++)
 	{
@@ -21,7 +21,7 @@ void EarthTank::Attack()
 	}
 
 }
-
+//the overrriden function should call both attacks
 // if ES is< 0.3*AS, themn tanks should attack AS using attacksp
 // in Game rules when calling tanks to attack
 /* if (ES<0.3*AS)
@@ -45,6 +45,20 @@ void EarthTank::AttackSp() {
 		tempList->dequeue(temp);
 		ALienSoldierList->insert(temp);
 	}
+}
 
-
+void EarthTank::Attack() {
+	if (ES->getCount() < 0.3 * AS->getCount())
+	{
+		attackSoldiers = true;
+	}
+	if(ES->getCount() > 0.8 * AS->getCount())
+		attackSoldiers = false;
+	if (attackSoldiers)
+	{
+		AttackNor();
+		AttackSp();
+	}
+	else
+		AttackNor();
 }
