@@ -19,6 +19,7 @@
     <ClInclude Include="ADS\priQueue.h" />
     <ClInclude Include="ADS\QueueADT.h" />
     <ClInclude Include="ADS\StackADT.h" />
+    <ClInclude Include="AlienArmy.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArmyUnits\ArmyUnit.cpp" />
@@ -33,9 +34,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameRules.cpp" />
     <ClCompile Include="EarthArmy.cpp" />
+    <ClCompile Include="AlienArmy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ID.txt" />

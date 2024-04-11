@@ -25,10 +25,9 @@ public:
     int getID() const;
     string getType() const;
     int getJoinTime() const;
-    int getHealth() const;
+    int* getHealth();
     int getPower() const;
     int getAttackCapacity() const;
-    virtual void Attack()=0;
 
 
 };
