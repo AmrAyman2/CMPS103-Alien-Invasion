@@ -1,5 +1,8 @@
 #include "EarthTank.h"
 
+EarthTank::EarthTank(int id, int tj, int hp, int power, int attackcap):ArmyUnit(id, "Earth Tank", tj, hp, power, attackcap)
+{}
+
 // Attack function of unit tank gets the required number of monsters and reduces its health
 // if dead its sent to dead list, else its ent to temp list
 // after the tank finishes attacking, monsters in templist are sent back to monsterlist

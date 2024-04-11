@@ -9,7 +9,7 @@ void EarthSoldier::Attack(AlienArmy* army)
 {
 	int count = 0;
 	AlienSoldier* unitattacked;
-	while (army->AlienSoldierQueue.dequeue(unitattacked) && count < attackCapacity) {
+	while (army->AS_List.dequeue(unitattacked) && count < attackCapacity) {
 		int* unitattackedhp = unitattacked->getHealth();
 		*unitattackedhp -= (power * health / 100) / sqrt(*unitattackedhp);
 		count++;

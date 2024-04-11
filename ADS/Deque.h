@@ -1,8 +1,6 @@
-/*
-         ----- The implementation of class Deque was done from scratch -----
-This is a program that implements the double-ended queue (Deque) using Array implementation.
-The Deque is implemented such that you can add and remove from both ends of it,
-where Front of deque is at index [0] & Rear of deque is at index [MAX_SIZE].
+/*This is a program that implements the double-ended queue (Deque) using Array implementation.
+The Deque is implemented such that you can add to the end of the queue and remove from both ends of it,
+where Front of deque is at index [0] & Rear of deque is at index [rearInd]. In case array is full rearInd = MAX_SIZE - 1
 */
 
 #pragma once
@@ -16,92 +14,79 @@ class Deque :public QueueADT<T>
 {
 	private:
 		T items[MAX_SIZE];   //array which holds items
-		int frontInd;        //holds index of first element (in array) from front of queue
-		int rearInd;         //holds index of first element (in array) from rear  of queue
+		int rearInd;         //holds index of last element (in array) which is at rear of queue
+		                     //in case array is full it holds index [MAX_SIZE - 1]
 
 	public:
 
-		Deque() { frontInd = -1; rearInd = MAX_SIZE;} //default constructor
-		/* In constructor, I intialized frontInd with -1 which is one less than 0 which is index of first element in array so that
-		 when adding a first element to queue frontInd will be zero which is index if first element, same with rearInd.
-		 Usinf this as a condition when enqueuing or dequeuing from both rear or end ensures that frontInd & rearInd will always
-		 hold a valid index within array*/
+		Deque() { rearInd = -1; } //default constructor
+		/* In constructor, I intialized rearInd with -1 which is one less than 0 which is index of first element in array so that
+		 when adding a first element to queue rearInd will be zero which is index of first element.
+		 Using this as a condition when enqueuing or dequeuing ensures that rearInd will always hold a valid index within array. */
 
-		bool isEmpty() const { return (frontInd == -1 && rearInd == MAX_SIZE); }
+		bool isEmpty() const { return (rearInd == -1); }
 
-		/* This function enqueues an item to the first
-		 free space from front of the queue in array */
+		/* This function enqueues an item to  
+		 the rear of the queue in array */
 		bool enqueue(const T& newEntry)
 		{
-			if (frontInd==rearInd-1) return false;
+			if (rearInd==MAX_SIZE-1) return false;
 			else
 			{
-				items[frontInd+1] = newEntry;
-				frontInd++;
+				items[rearInd+1] = newEntry;
+				rearInd++;
 				return true;
 			}
 		}
 
-		/* This function dequeues the item at the 
-		 front of queue - which is at index [0] */
+		/* This function dequeues first item in array
+		 (at front of queue) which is at index [0] */
 		bool dequeue(T& EntryZero)
 		{
-			if (frontInd==-1) return false;
+			if (rearInd==-1) return false;
 			else
 			{
 				EntryZero = items[0];
-				items[0] = items[frontInd];
-				frontInd--;
-				return true;
-			}
-		}
-
-		/* This function enqueues an item to the first
-		 free space from rear of the queue in array */
-		bool enqueueRear(const T& newEntry)
-		{
-			if (rearInd==frontInd+1) return false;
-			else
-			{
-				items[rearInd-1] = newEntry;
+				items[0] = items[rearInd];
 				rearInd--;
 				return true;
 			}
 		}
 
-		/* This function dequeues the item at the
-		 front of queue - which is at index [MAX_SIZE] */
+		/* This function dequeues last item in array
+		 (at rear of queue) which is at index [rearInd] */
 		bool dequeueRear(T& EntryLast)
 		{
-			if (rearInd==MAX_SIZE) return false;
+			if (rearInd==-1) return false;
 			else
 			{
-				EntryLast = items[MAX_SIZE-1];
-				items[MAX_SIZE-1] = item[rearInd];
-				rearInd++;
+				EntryLast = items[rearInd];
+				rearInd--;
 				return true;
 			}
 		}
 		
-		/* This function returns element at
-		 front of queue which is at index [0] */
+		/* This function returns first item in array
+		 (at front of queue) which is at index [0] */
 		bool peek(T& EntryZero) const
 		{
-			if (frontInd==-1) return false;
+			if (rearInd==-1) return false;
 			else
 			{
 				EntryZero = items[0];
+				return true;
 			}
 		}
 
-		/* This function returns element at
-		 front of queue which is at index [0] */
+		/* This function returns last item in array 
+		 (at rear of queue) which is at index [rearInd] */
 		bool peekRear(T& EntryLast) const
 		{
 			if (rearInd==-1) return false;
 			else
 			{
-				EntryLast = items[0];
+				EntryLast = items[rearInd];
+				return true;
 			}
 		}
 

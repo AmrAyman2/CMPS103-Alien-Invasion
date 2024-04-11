@@ -1,5 +1,9 @@
 #pragma once
-class AlienMonster
+#include "../ArmyUnit.h"
+#include "../../EarthArmy.h"
+class AlienMonster: public ArmyUnit
 {
+	public:
+		AlienMonster(int id, int jt, int hp, int power, int attackCap);
+		void Attack(EarthArmy* army);
 };
-

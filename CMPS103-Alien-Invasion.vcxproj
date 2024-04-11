@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ADS\ArrayBag.h" />
     <ClInclude Include="ADS\ArrayStack.h" />
     <ClInclude Include="ADS\Deque.h" />
     <ClInclude Include="ADS\LinkedQueue.h" />
