@@ -1,10 +1,10 @@
 #pragma once
 class Input
 {
-private:
+protected:
 
 	int N;
-	//Number f army units to generate each time step
+	//Number of army units to generate each time step
 
 	int ES, ET, EG;
 	//Percentages for Earth units
