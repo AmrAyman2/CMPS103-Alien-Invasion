@@ -6,7 +6,9 @@ ArmyUnit::ArmyUnit(int id, const string& unitType, int tj, int hp, int pow, int 
     health(hp),
     power(pow),
     attackCapacity(attackCap)
-{}
+{
+    troopCount++;
+}
 
 // Member function implementations
 int ArmyUnit::getID() const {
@@ -31,4 +33,24 @@ int ArmyUnit::getPower() const {
 
 int ArmyUnit::getAttackCapacity() const {
     return attackCapacity;
+}
+
+void ArmyUnit::setID(int id) {
+    ID = id;
+}
+
+void ArmyUnit::setHealth(int h) {
+    health = h;
+}
+
+void ArmyUnit::setAttackCapacity(int a) {
+    attackCapacity = a;
+}
+
+void ArmyUnit::setPower(int p) {
+    power = p;
+}
+
+int ArmyUnit::getTroopCount() {
+    return troopCount;
 }

@@ -5,6 +5,8 @@ class EarthSoldier :public ArmyUnit
 {
 
 public:
+	EarthSoldier();
 	EarthSoldier(int id, int tj, int hp, int power, int attackcap);
 	void Attack(AlienArmy* army);
+	
 };

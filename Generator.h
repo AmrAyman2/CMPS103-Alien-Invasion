@@ -1,17 +1,17 @@
 #pragma once
-#include <iostream>
-#include "Input.h"
-class Generator : public Input {
+#include"Input.h"
+#include"EarthArmy.h"
+#include"AlienArmy.h"
 
-	/*int N;
-	int ES;
-	int ET;
-	int EG;
-	int AS;
-	int AM;
-	int AD;
-	int prob;*/
-	Generator(int n, int es, int et, int eg, int as, int am, int ad, int prob);
-	void mainFunction();
-};
+class Generator
+{
+private:
+	Input* I1;
+	EarthArmy* E1;
+	AlienArmy* A1;
 
+public:
+	Generator(Input&, EarthArmy&, AlienArmy&);
+	void generateEarth();
+	void generateAlien();
+}
