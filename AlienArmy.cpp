@@ -37,3 +37,73 @@ void AlienArmy::Attack(EarthArmy* earth)
 	ArrayBag<AlienMonster*> temp3 = AM_List;
 	//using random generator which is yet to be done
 }
+
+int AlienArmy::AS_Count()
+{
+	LinkedQueue<AlienSoldier*> temp(AS_List);
+	int AScount = 0;
+	AlienSoldier* temppointer;
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		AScount++;
+	}
+	return AScount;
+}
+
+void AlienArmy::AS_PrintID()
+{
+	LinkedQueue<AlienSoldier*> temp(AS_List);
+	AlienSoldier* temppointer;
+	cout << "[";
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		if (temp.isEmpty())
+			cout << temppointer->getID() << "]" << endl;
+		else
+			cout << temppointer->getID() << ",";
+	}
+}
+
+int AlienArmy::AD_Count()
+{
+	Deque<AlienDrone*> temp(AD_List);
+	int ADcount = 0;
+	AlienDrone* temppointer;
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		ADcount++;
+	}
+	return ADcount;
+}
+
+void AlienArmy::AD_PrintID()
+{
+	Deque<AlienDrone*> temp(AD_List);
+	AlienDrone* temppointer;
+	cout << "[";
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		if (temp.isEmpty())
+			cout << temppointer->getID() << "]" << endl;
+		else
+			cout << temppointer->getID() << ",";
+	}
+}
+
+int AlienArmy::AM_Count()
+{
+	return AM_List.getCurrentSize();
+}
+
+void AlienArmy::AM_PrintID()
+{
+	AM_List.print();
+}
+
+void AlienArmy::print()
+{
+	cout << "============== Alien Army Alive Units ==============" << endl;
+	AS_PrintID();
+	AD_PrintID();
+	AM_PrintID();
+}

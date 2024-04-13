@@ -15,5 +15,12 @@ public:
 	bool AddUnit(AlienDrone* unit);
 	bool AddUnit(AlienMonster* unit);
 	void Attack(EarthArmy* earth);
+	int AS_Count();
+	void AS_PrintID();
+	int AD_Count();
+	void AD_PrintID();
+	int AM_Count();
+	void AM_PrintID();
+	void print();
 };
 

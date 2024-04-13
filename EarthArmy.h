@@ -16,4 +16,11 @@ public:
 	bool AddUnit(EarthTank* unit);
 	bool AddUnit(EarthGunnery* unit);
 	void Attack(AlienArmy* alien);
+	int ES_Count();
+	void ES_PrintID();
+	int ET_Count();
+	void ET_PrintID();
+	int EG_Count();
+	void EG_PrintID();
+	void print();
 };
