@@ -54,3 +54,27 @@ void ArmyUnit::setPower(int p) {
 int ArmyUnit::getTroopCount() {
     return troopCount;
 }
+
+void ArmyUnit::setJoinTime(int jointime) {
+    TJ = jointime;
+}
+
+void ArmyUnit::setTA(int ta) {
+    Ta = ta;
+}
+
+void ArmyUnit::setTD(int td) {
+    Td = td;
+}
+
+void ArmyUnit::setDF(int df) {
+    Df = df;
+}
+
+void ArmyUnit::setDd(int dd) {
+    Dd = dd;
+}
+
+void ArmyUnit::setBt(int bt) {
+    Bt = bt;
+}

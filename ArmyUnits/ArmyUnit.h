@@ -21,18 +21,29 @@ protected:
 public:
     // Constructor
     ArmyUnit(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
-
     // Member functions
-    int getID() const;
     string getType() const;
+    int getID() const;
     int getJoinTime() const;
     int* getHealth();
     int getPower() const;
     int getAttackCapacity() const;
+    int getTroopCount();//used in setting ID in generator, counts the number of troops created from each type
+
+
     void setID(int);
     void setHealth(int);
     void setAttackCapacity(int);
     void setPower(int);
-    int getTroopCount();
-
+    void setJoinTime(int);
+    void setTA(int);
+    void setTD(int);
+    void setDF(int);
+    void setDd(int);
+    void setBt(int);
+    
 };
+
+/* 
+
+*/
