@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 using namespace std;
 
 class ArmyUnit {
@@ -42,8 +43,7 @@ public:
     void setDd(int);
     void setBt(int);
     
+
+    void printID();
+    
 };
-
-/* 
-
-*/

@@ -16,4 +16,6 @@ public:
 	Generator(Input&, EarthArmy&, AlienArmy&, GameRules&);
 	void generateEarth();
 	void generateAlien();
+
 };
+

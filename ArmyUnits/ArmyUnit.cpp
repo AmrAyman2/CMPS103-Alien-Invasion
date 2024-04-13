@@ -51,6 +51,11 @@ void ArmyUnit::setPower(int p) {
     power = p;
 }
 
+void ArmyUnit::printID()
+{
+    cout << ID << endl;
+}
+
 int ArmyUnit::getTroopCount() {
     return troopCount;
 }
