@@ -15,6 +15,7 @@ protected:
     int Df; //first attack delay
     int Dd; //Destruction delay
     int Bt; //batle time
+    int troopCount=0; //needed for IDs in random generator
 
 
 public:
@@ -28,6 +29,10 @@ public:
     int* getHealth();
     int getPower() const;
     int getAttackCapacity() const;
-
+    void setID(int);
+    void setHealth(int);
+    void setAttackCapacity(int);
+    void setPower(int);
+    int getTroopCount();
 
 };

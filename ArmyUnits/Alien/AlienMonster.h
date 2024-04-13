@@ -4,6 +4,7 @@
 class AlienMonster: public ArmyUnit
 {
 	public:
+		AlienMonster();
 		AlienMonster(int id, int jt, int hp, int power, int attackCap);
 		void Attack(EarthArmy* army);
 };
