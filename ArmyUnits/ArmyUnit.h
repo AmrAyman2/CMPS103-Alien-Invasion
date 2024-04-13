@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 using namespace std;
 
 class ArmyUnit {
@@ -33,6 +34,7 @@ public:
     void setHealth(int);
     void setAttackCapacity(int);
     void setPower(int);
+    void printID();
     int getTroopCount();
 
 };

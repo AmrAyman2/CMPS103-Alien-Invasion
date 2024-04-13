@@ -3,7 +3,7 @@
 #include "cmath"
 EarthSoldier::EarthSoldier(int id, int tj, int hp, int power, int attackcap):ArmyUnit(id,"Earth Soldier", tj, hp, power, attackcap)
 {
-	count++;
+	
 }
 
 void EarthSoldier::Attack(AlienArmy* army)
