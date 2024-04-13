@@ -1,5 +1,5 @@
+#include <iostream>
 #include "Generator.h"
-#include<iostream>
 using namespace std;
 
 Generator::Generator(Input& i1,EarthArmy& e1, AlienArmy& a1) {
@@ -86,3 +86,4 @@ void Generator::generateAlien() {
 	}
 
 }
+

@@ -14,5 +14,4 @@ public:
 	Generator(Input&, EarthArmy&, AlienArmy&);
 	void generateEarth();
 	void generateAlien();
-};
-
+}
