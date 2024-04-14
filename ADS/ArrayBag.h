@@ -94,8 +94,12 @@ class ArrayBag
 			return frequency;
 		}
 		void print() {
+			cout << "[";
 			for (int i = 0; i < itemcount; i++) {
-				cout << items[i];
+				if (isEmpty())
+					cout << items[i] << "]" << endl;
+				else
+					cout << items[i] << ",";
 			}
 		}
 };

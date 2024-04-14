@@ -12,8 +12,29 @@ using namespace std;
 
 
 // Kamel ya bro @Ahmed Farouk
+int GameRules::getDeadCount()
+{
+	LinkedQueue<ArmyUnit*> temp(killedlist);
+	int killedcount = 0;
+	ArmyUnit* temppointer;
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		killedcount++;
+	}
+	return killedcount;
+}
 void GameRules::printDeadList() {
-
+	cout << "============== Killed / Destructed Units ==============" << endl;
+	LinkedQueue<ArmyUnit*> temp(killedlist);
+	ArmyUnit* temppointer;
+	cout << getDeadCount() << " units " << "[";				
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer);
+		if (temp.isEmpty())
+			cout << temppointer->getID() << "]" << endl;
+		else
+			cout << temppointer->getID() << ",";
+	}
 }
 void GameRules::War() {
 	Input I1;           
@@ -137,3 +158,5 @@ void GameRules::test() {
 		time++;
 	}
 }
+
+

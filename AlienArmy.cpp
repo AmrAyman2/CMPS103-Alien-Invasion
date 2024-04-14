@@ -54,7 +54,7 @@ void AlienArmy::AS_PrintID()
 {
 	LinkedQueue<AlienSoldier*> temp(AS_List);
 	AlienSoldier* temppointer;
-	cout << "[";
+	cout << AS_Count() << " AS " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -80,7 +80,7 @@ void AlienArmy::AD_PrintID()
 {
 	Deque<AlienDrone*> temp(AD_List);
 	AlienDrone* temppointer;
-	cout << "[";
+	cout << AD_Count() << " AD " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -97,6 +97,7 @@ int AlienArmy::AM_Count()
 
 void AlienArmy::AM_PrintID()
 {
+	cout << AM_Count() << " AM ";
 	AM_List.print();
 }
 
