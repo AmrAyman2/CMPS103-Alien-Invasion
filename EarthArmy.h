@@ -8,6 +8,7 @@
 #include "ArmyUnits/Earth/EarthGunnery.h"
 class EarthArmy : public ArmyUnit {
 public:
+	EarthArmy();
 	LinkedQueue<EarthSoldier*> ES_List;
 	ArrayStack<EarthTank*> ET_List;
 	priQueue<EarthGunnery*> EG_List;

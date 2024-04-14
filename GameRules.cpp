@@ -132,7 +132,8 @@ void GameRules::test() {
 				killedlist.enqueue(dronetop);
 			}
 		}
-
+		human->print();
+		aliens->print();
 		time++;
 	}
 }

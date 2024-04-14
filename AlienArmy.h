@@ -7,6 +7,7 @@
 class AlienArmy : public ArmyUnit
 {
 public:
+	AlienArmy();
 	LinkedQueue<AlienSoldier*> AS_List;
 	Deque<AlienDrone*> AD_List;
 	ArrayBag<AlienMonster*> AM_List;
