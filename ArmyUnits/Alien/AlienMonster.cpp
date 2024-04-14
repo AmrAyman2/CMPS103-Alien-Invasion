@@ -17,6 +17,6 @@ void AlienMonster::Attack(EarthArmy* army)
 
 ostream& operator<<(ostream& os, const AlienMonster monster)
 {
-	// TODO: insert return statement here
+	
 	cout << monster.getID();
 }
