@@ -22,5 +22,6 @@ public:
 	void ET_PrintID();
 	int EG_Count();
 	void EG_PrintID();
+	int getTotalCount();
 	void print();
 };

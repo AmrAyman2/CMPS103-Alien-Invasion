@@ -21,6 +21,7 @@ public:
 	void AD_PrintID();
 	int AM_Count();
 	void AM_PrintID();
+	int getTotalCount();
 	void print();
 };
 

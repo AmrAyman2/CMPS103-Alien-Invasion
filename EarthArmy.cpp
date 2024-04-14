@@ -105,6 +105,11 @@ void EarthArmy::EG_PrintID()
 	}
 }
 
+int EarthArmy::getTotalCount()
+{
+	return (ES_Count() + ET_Count() + EG_Count());
+}
+
 void EarthArmy::print()
 {
 	cout << "============== Earth Army Alive Units ==============" << endl;
