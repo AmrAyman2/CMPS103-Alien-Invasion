@@ -41,7 +41,7 @@ void EarthArmy::ES_PrintID()
 {
 	LinkedQueue<EarthSoldier*> temp(ES_List);
 	EarthSoldier* temppointer;
-	cout << "[";
+	cout << ES_Count() << " ES " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -67,7 +67,7 @@ void EarthArmy::ET_PrintID()
 {
 	ArrayStack<EarthTank*> temp(ET_List);
 	EarthTank* temppointer;
-	cout << "[";
+	cout << ET_Count() << " ET " << "[";
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
 		if (temp.isEmpty())
@@ -95,7 +95,7 @@ void EarthArmy::EG_PrintID()
 	priQueue<EarthGunnery*> temp(EG_List);
 	EarthGunnery* temppointer;
 	int trash = 0;
-	cout << "[";
+	cout << EG_Count() << " EG " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer,trash);
 		if (temp.isEmpty())
