@@ -6,7 +6,7 @@
 #include "ArmyUnits/Earth/EarthSoldier.h"
 #include "ArmyUnits/Earth/EarthTank.h"
 #include "ArmyUnits/Earth/EarthGunnery.h"
-class EarthArmy {
+class EarthArmy : public ArmyUnit {
 public:
 	LinkedQueue<EarthSoldier*> ES_List;
 	ArrayStack<EarthTank*> ET_List;

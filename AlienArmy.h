@@ -4,7 +4,7 @@
 #include "ArmyUnits/Alien/AlienMonster.h"
 #include "ADS/Deque.h"
 #include "ADS/ArrayBag.h"
-class AlienArmy
+class AlienArmy : public ArmyUnit
 {
 public:
 	LinkedQueue<AlienSoldier*> AS_List;
