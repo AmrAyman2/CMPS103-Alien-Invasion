@@ -9,6 +9,7 @@ EarthSoldier::EarthSoldier(int id,string name, int tj, int hp, int power, int at
 	
 }
 
+////////////////////PHASE 2/////////////////
 //void EarthSoldier::Attack(AlienArmy* army)
 //{
 //	int count = 0;

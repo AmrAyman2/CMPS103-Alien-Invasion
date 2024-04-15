@@ -10,6 +10,7 @@ class GameRules
 {
 private:
 	bool Victory=false;
+
 	string Winner;
 	int timeStep=1;
 	LinkedQueue<ArmyUnit*> killedlist;

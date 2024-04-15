@@ -100,7 +100,10 @@ using namespace std;
 
 int main()
 {
+
 	GameRules G1;
-	G1.War();
+	G1.test();
+	//G1.War();
+
 	return 0;
 }

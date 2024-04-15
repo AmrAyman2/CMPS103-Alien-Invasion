@@ -6,13 +6,13 @@
 #include "ArmyUnits/Earth/EarthSoldier.h"
 #include "ArmyUnits/Earth/EarthTank.h"
 #include "ArmyUnits/Earth/EarthGunnery.h"
-class EarthArmy : public ArmyUnit {
-public:
+class EarthArmy {
+private:
 	LinkedQueue<EarthSoldier*> ES_List;
 	ArrayStack<EarthTank*> ET_List;
 	priQueue<EarthGunnery*> EG_List;
 public:
-	EarthArmy();
+	EarthArmy() {};
 	bool AddUnit(EarthSoldier* unit);
 	bool AddUnit(EarthTank* unit);
 	bool AddUnit(EarthGunnery* unit);
