@@ -1,7 +1,4 @@
 #include "EarthSoldier.h"
-EarthSoldier::EarthSoldier()
-{
-}
 //#include "../../AlienArmy.h"
 //#include "cmath"
 EarthSoldier::EarthSoldier(int id,string name, int tj, int hp, int power, int attackcap):ArmyUnit(id,name, tj, hp, power, attackcap)

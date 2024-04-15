@@ -1,9 +1,5 @@
 #include "AlienDrone.h"
 
-AlienDrone::AlienDrone()
-{
-}
-
 AlienDrone::AlienDrone(int id, string name,int jt, int hp, int power, int attackCap) : ArmyUnit(id, name, jt, hp, power, attackCap) {}
 //void AlienDrone::Attack(EarthArmy* army)
 //{

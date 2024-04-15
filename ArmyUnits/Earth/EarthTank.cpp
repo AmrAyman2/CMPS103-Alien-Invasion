@@ -4,9 +4,7 @@
 #include "../Alien/AlienMonster.h"
 #include "../../ArmyUnits/ArmyUnit.h"
 #include "../../EarthArmy.h"
-EarthTank::EarthTank()
-{
-}
+
 EarthTank::EarthTank(int id,string name, int tj, int hp, int power, int attackcap):ArmyUnit(id, name, tj, hp, power, attackcap)
 {
 }
