@@ -7,7 +7,7 @@ class ArmyUnit {
 protected:
     int ID;
     string type;
-    int TJ; // TJ: join time
+    int TJ;  // join time
     int health;
     int power;
     int attackCapacity; //maximum number of units that could be attacked by this unit at one timestep
@@ -21,7 +21,7 @@ protected:
 
 public:
     // Constructor
-    ArmyUnit(int id = 0, string unitType ="", int jointime=0, int hp=0, int pow=0, int attackcap=0);
+    ArmyUnit(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
     // Member functions
     string getType() const;
     int getID() const;

@@ -15,6 +15,7 @@ int ArmyUnit::getID() const {
     return ID;
 }
 
+
 string ArmyUnit::getType() const {
     return type;
 }

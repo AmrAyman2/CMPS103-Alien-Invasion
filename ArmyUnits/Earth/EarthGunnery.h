@@ -3,7 +3,6 @@
 class EarthGunnery:public ArmyUnit
 {
 	public:
-		EarthGunnery(int id,string, int tj, int hp, int power, int attackcap);
-		EarthGunnery();
-		//void Attack(AlienArmy* army);
+		EarthGunnery(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
+		//void Attack(AlienArmy* army); PHASE 2
 };

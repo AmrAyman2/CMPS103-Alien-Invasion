@@ -3,8 +3,7 @@
 class AlienMonster: public ArmyUnit
 {
 	public:
-		AlienMonster();
-		AlienMonster(int id,string name ,int jt, int hp, int power, int attackCap);
-		//void Attack(EarthArmy* army);
+		AlienMonster(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
+		//void Attack(EarthArmy* army); PHASE 2
 };
-		//ostream& operator<<(ostream& os, const AlienMonster monster);
+		//ostream& operator<<(ostream& os, const AlienMonster monster); PHASE 2

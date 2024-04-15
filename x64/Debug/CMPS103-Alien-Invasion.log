@@ -1,4 +1,5 @@
 ﻿  AlienArmy.cpp
+<<<<<<< HEAD
   EarthTank.cpp
   EarthArmy.cpp
   GameRules.cpp
@@ -34,5 +35,20 @@ C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(152,11): error 
   
   Generator.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+=======
+  AlienDrone.cpp
+  AlienMonster.cpp
+  AlienSoldier.cpp
+  ArmyUnit.cpp
+  EarthGunnery.cpp
+  EarthSoldier.cpp
+  EarthTank.cpp
+  EarthArmy.cpp
+  GameRules.cpp
+  Generator.cpp
+C:\Users\hi\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Input.cpp
+>>>>>>> parent of 4b93d15 (Revert "H")
   main.cpp
   Generating Code...
+  CMPS103-Alien-Invasion.vcxproj -> C:\Users\hi\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
