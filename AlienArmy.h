@@ -5,7 +5,7 @@
 #include "ADS/Deque.h"
 #include "ADS/ArrayBag.h"
 #include "ADS/LinkedQueue.h"
-class AlienArmy : public ArmyUnit
+class AlienArmy
 {
 private:
 	LinkedQueue<AlienSoldier*> AS_List;

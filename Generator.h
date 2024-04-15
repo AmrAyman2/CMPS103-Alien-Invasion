@@ -11,6 +11,8 @@ private:
 	EarthArmy* E1;
 	AlienArmy* A1;
 	GameRules* G1;
+	int nextEarthid = 1;
+	int nextAlienid = 2000;
 public:
 	Generator();
 	Generator(Input&, EarthArmy&, AlienArmy&, GameRules&);

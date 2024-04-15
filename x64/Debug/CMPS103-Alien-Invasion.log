@@ -1,10 +1,57 @@
 ﻿  AlienArmy.cpp
+  AlienDrone.cpp
+  AlienMonster.cpp
+  AlienSoldier.cpp
+  EarthGunnery.cpp
+  EarthSoldier.cpp
   EarthTank.cpp
   EarthArmy.cpp
   GameRules.cpp
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(132,11): error C2248: 'AlienArmy::AS_List': cannot access private member declared in class 'AlienArmy'
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(115,9): error C2248: 'EarthArmy::ES_List': cannot access private member declared in class 'EarthArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(11,29):
+  see declaration of 'EarthArmy::ES_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(9,7):
+  see declaration of 'EarthArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(116,9): error C2248: 'EarthArmy::ES_List': cannot access private member declared in class 'EarthArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(11,29):
+  see declaration of 'EarthArmy::ES_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(9,7):
+  see declaration of 'EarthArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(120,9): error C2248: 'EarthArmy::ET_List': cannot access private member declared in class 'EarthArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(12,25):
+  see declaration of 'EarthArmy::ET_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(9,7):
+  see declaration of 'EarthArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(121,18): error C2065: 'riphaydar': undeclared identifier
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(122,4): error C2065: 'riphaydar': undeclared identifier
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(125,9): error C2248: 'EarthArmy::EG_List': cannot access private member declared in class 'EarthArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(13,26):
+  see declaration of 'EarthArmy::EG_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(9,7):
+  see declaration of 'EarthArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(127,9): error C2248: 'EarthArmy::EG_List': cannot access private member declared in class 'EarthArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(13,26):
+  see declaration of 'EarthArmy::EG_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(9,7):
+  see declaration of 'EarthArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(131,11): error C2248: 'AlienArmy::AS_List': cannot access private member declared in class 'AlienArmy'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(11,29):
   see declaration of 'AlienArmy::AS_List'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
+  see declaration of 'AlienArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(132,34): error C2039: 'getHealth': is not a member of 'AlienArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
+  see declaration of 'AlienArmy'
+  
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(140,11): error C2248: 'AlienArmy::AM_List': cannot access private member declared in class 'AlienArmy'
+  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(13,26):
+  see declaration of 'AlienArmy::AM_List'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
   see declaration of 'AlienArmy'
   
@@ -14,24 +61,19 @@ C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(141,11): error 
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
   see declaration of 'AlienArmy'
   
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(142,11): error C2248: 'AlienArmy::AM_List': cannot access private member declared in class 'AlienArmy'
-  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(13,26):
-  see declaration of 'AlienArmy::AM_List'
-  C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
-  see declaration of 'AlienArmy'
-  
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(147,11): error C2248: 'AlienArmy::AD_List': cannot access private member declared in class 'AlienArmy'
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(146,11): error C2248: 'AlienArmy::AD_List': cannot access private member declared in class 'AlienArmy'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(12,21):
   see declaration of 'AlienArmy::AD_List'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
   see declaration of 'AlienArmy'
   
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(152,11): error C2248: 'AlienArmy::AD_List': cannot access private member declared in class 'AlienArmy'
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(151,11): error C2248: 'AlienArmy::AD_List': cannot access private member declared in class 'AlienArmy'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(12,21):
   see declaration of 'AlienArmy::AD_List'
   C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
   see declaration of 'AlienArmy'
   
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(151,11): error C2064: term does not evaluate to a function taking 0 arguments
   Generator.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.cpp
