@@ -1,11 +1,8 @@
 #include "EarthSoldier.h"
-//#include "../../AlienArmy.h"
-//#include "cmath"
-EarthSoldier::EarthSoldier(int id,string name, int tj, int hp, int power, int attackcap):ArmyUnit(id,name, tj, hp, power, attackcap)
-{
-	
-}
 
+EarthSoldier::EarthSoldier(int id, const string& unitType, int jointime, int hp, int pow, int attackcap):ArmyUnit(id, unitType, jointime, hp, pow, attackcap) {}
+
+////////////////////PHASE 2/////////////////
 //void EarthSoldier::Attack(AlienArmy* army)
 //{
 //	int count = 0;
