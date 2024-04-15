@@ -15,15 +15,15 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	return EG_List.enqueue(unit, highestcombo);
 }
 
-void EarthArmy::Attack(AlienArmy* alien)
-{
-	LinkedQueue <EarthSoldier*> temp = ES_List;
-	EarthSoldier* soldier;
-	while (!temp.isEmpty()) {
-		temp.dequeue(soldier);
-		soldier->Attack(alien);
-	}
-}
+//void EarthArmy::Attack(AlienArmy* alien)
+//{
+//	LinkedQueue <EarthSoldier*> temp = ES_List;
+//	EarthSoldier* soldier;
+//	while (!temp.isEmpty()) {
+//		temp.dequeue(soldier);
+//		soldier->Attack(alien);
+//	}
+//}
 
 int EarthArmy::ES_Count()
 {
@@ -116,4 +116,19 @@ void EarthArmy::print()
 	ES_PrintID();
 	ET_PrintID();
 	EG_PrintID();
+}
+
+LinkedQueue<EarthSoldier*> EarthArmy::getES_List()
+{
+	return ES_List;
+}
+
+ArrayStack<EarthTank*> EarthArmy::getET_List()
+{
+	return ET_List;
+}
+
+priQueue<EarthGunnery*> EarthArmy::getEG_List()
+{
+	return EG_List;
 }

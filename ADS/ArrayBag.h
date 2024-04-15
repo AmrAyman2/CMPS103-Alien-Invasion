@@ -1,6 +1,5 @@
 /* Header file for an array-based implementation of the ADT bag. */
 #pragma once
-#define MAX_SIZE 100;
 
 template <typename ItemType>
 class ArrayBag
@@ -34,11 +33,11 @@ class ArrayBag
 		ArrayBag(): itemCount(0), maxItems(DEFAULT_CAPACITY){}
 		int getCurrentSize() const
 		{
-			return itemcount;
+			return itemCount;
 		}
 		bool isEmpty() const
 		{
-			return (itemcount == 0);
+			return (itemCount == 0);
 		}
 		bool add(const ItemType& newEntry)
 		{
@@ -95,7 +94,7 @@ class ArrayBag
 		}
 		void print() {
 			cout << "[";
-			for (int i = 0; i < itemcount; i++) {
+			for (int i = 0; i < itemCount; i++) {
 				if (isEmpty())
 					cout << items[i] << "]" << endl;
 				else

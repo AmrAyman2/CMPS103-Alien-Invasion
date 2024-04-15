@@ -1,12 +1,12 @@
-//#include <iostream>
+#include <iostream>
 //#include "ArmyUnits/Alien/AlienSoldier.h"
 //#include "AlienArmy.h"
-//#include "GameRules.h"
+#include "GameRules.h"
 //#include "Input.h"
 //#include "Generator.h"
 //#include "EarthArmy.h"
 //#include "ArmyUnits/ArmyUnit.h"
-//using namespace std;
+using namespace std;
 //
 //int main() {
 //	Input* input = new Input();
@@ -97,3 +97,12 @@
 //	cout<<*hp<<endl;
 //}*/
 //}
+
+int main()
+{
+
+	//GameRules G1;
+	//G1.War();
+
+	return 0;
+}
