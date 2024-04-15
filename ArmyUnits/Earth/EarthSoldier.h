@@ -5,7 +5,8 @@ class EarthSoldier :public ArmyUnit
 {
 
 public:
-	EarthSoldier(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
-	//void Attack(AlienArmy* army); PHASE 2
+	EarthSoldier();
+	EarthSoldier(int id,string ,int tj, int hp, int power, int attackcap);
+	//void Attack(AlienArmy* army);
 	
 };

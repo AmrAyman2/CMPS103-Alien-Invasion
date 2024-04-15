@@ -1,8 +1,5 @@
 #include "EarthArmy.h"
-EarthArmy::EarthArmy()
-{
-}
-bool EarthArmy::AddUnit(EarthSoldier* unit)
+bool EarthArmy::AddUnit(EarthSoldier* unit) 
 {
 	return ES_List.enqueue(unit);
 }
@@ -18,9 +15,6 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	return EG_List.enqueue(unit, highestcombo);
 }
 
-
-
-/////////////phase 2///////////
 //void EarthArmy::Attack(AlienArmy* alien)
 //{
 //	LinkedQueue <EarthSoldier*> temp = ES_List;
@@ -124,17 +118,19 @@ void EarthArmy::print()
 	EG_PrintID();
 }
 
-LinkedQueue<EarthSoldier*> EarthArmy::getES_List()
+void EarthArmy::getES_List(LinkedQueue<EarthSoldier*>& list)
 {
-	return ES_List;
+	list = ES_List;
 }
 
-ArrayStack<EarthTank*> EarthArmy::getET_List()
+void EarthArmy::getET_List(ArrayStack<EarthTank*>& list)
 {
-	return ET_List;
+	list = ET_List;
 }
 
-priQueue<EarthGunnery*> EarthArmy::getEG_List()
+void EarthArmy::getEG_List(priQueue<EarthGunnery*>& list)
 {
-	return EG_List;
+	list = EG_List;
 }
+
+

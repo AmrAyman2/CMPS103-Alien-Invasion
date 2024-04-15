@@ -1,20 +1,19 @@
 #include "ArmyUnit.h"
-ArmyUnit::ArmyUnit(int id, const string& unitType, int tj, int hp, int pow, int attackCap)
-    : ID(id),
-    type(unitType),
-    TJ(tj),
-    health(hp),
-    power(pow),
-    attackCapacity(attackCap)
-{
-    troopCount++;
-}
+//ArmyUnit::ArmyUnit(int id, const string& unitType, int tj, int hp, int pow, int attackCap)
+//    : ID(id),
+//    type(unitType),
+//    TJ(tj),
+//    health(hp),
+//    power(pow),
+//    attackCapacity(attackCap)
+//{
+//    troopCount++;
+//}
 
 // Member function implementations
 int ArmyUnit::getID() const {
     return ID;
 }
-
 
 string ArmyUnit::getType() const {
     return type;

@@ -101,8 +101,7 @@ using namespace std;
 int main()
 {
 
-	GameRules G1;
-	G1.test();
+	//GameRules G1;
 	//G1.War();
 
 	return 0;

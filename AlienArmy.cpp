@@ -1,7 +1,4 @@
 #include "AlienArmy.h"
-AlienArmy::AlienArmy()
-{
-}
 bool AlienArmy::AddUnit(AlienSoldier* unit) 
 {
 	return AS_List.enqueue(unit);
@@ -117,17 +114,20 @@ void AlienArmy::print()
 	AM_PrintID();
 }
 
-LinkedQueue<AlienSoldier*> AlienArmy::getAS_List()
+void AlienArmy::getAS_List(LinkedQueue<AlienSoldier*>& list)
 {
-	return AS_List;
+	list = AS_List;
 }
 
-Deque<AlienDrone*> AlienArmy::getAD_List()
+void AlienArmy::getAD_List(Deque<AlienDrone*>& list)
 {
-	return AD_List;
+	list = AD_List;
 }
 
-ArrayBag<AlienMonster*> AlienArmy::getAM_List()
+void AlienArmy::getAM_List(ArrayBag<AlienMonster*>& list)
 {
-	return AM_List;
+	list = AM_List;
 }
+
+
+
