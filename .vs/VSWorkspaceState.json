@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ArmyUnits",
-    "\\ArmyUnits\\Earth"
+    "\\ADS",
+    "\\ArmyUnits"
   ],
-  "SelectedNode": "\\ArmyUnits\\Earth\\EarthTank.cpp",
+  "SelectedNode": "\\Generator.cpp",
   "PreviewInSolutionExplorer": false
 }
