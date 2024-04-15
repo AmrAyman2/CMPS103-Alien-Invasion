@@ -26,8 +26,8 @@ public:
 	int getTotalCount();
 	void print();
 
-	LinkedQueue<AlienSoldier*> getAS_List();
-	Deque<AlienDrone*> getAD_List();
-	ArrayBag<AlienMonster*> getAM_List();
+	void getAS_List(LinkedQueue<AlienSoldier*>& list);
+	void getAD_List(Deque<AlienDrone*>& list);
+	void getAM_List(ArrayBag<AlienMonster*>& list);
 };
 

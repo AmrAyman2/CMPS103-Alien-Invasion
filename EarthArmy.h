@@ -26,7 +26,7 @@ public:
 	int getTotalCount();
 	void print();
 
-	LinkedQueue<EarthSoldier*> getES_List();
-	ArrayStack<EarthTank*> getET_List();
-	priQueue<EarthGunnery*> getEG_List();
+	void getES_List(LinkedQueue<EarthSoldier*>& list);
+	void getET_List(ArrayStack<EarthTank*>& list);
+	void getEG_List(priQueue<EarthGunnery*>& list);
 };
