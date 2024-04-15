@@ -8,13 +8,7 @@
 EarthTank::EarthTank(int id,string name, int tj, int hp, int power, int attackcap):ArmyUnit(id, name, tj, hp, power, attackcap)
 {
 }
-{
-}
 
-EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int pow, int attackcap) : ArmyUnit(id, unitType, jointime, hp, pow, attackcap){}
-
-
-////////////////////////PHASE 2///////////////////////////////
 // Attack function of unit tank gets the required number of monsters and reduces its health
 // if dead its sent to dead list, else its ent to temp list
 // after the tank finishes attacking, monsters in templist are sent back to monsterlist
@@ -39,12 +33,12 @@ EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int 
 //the overrriden function should call both attacks
 // if ES is< 0.3*AS, themn tanks should attack AS using attacksp
 // in Game rules when calling tanks to attack
-// if (ES<0.3*AS)
-//*     while(ES!>=0.8 AS)
-//*          attack();
-//*          attacksp():
+/* if (ES<0.3*AS)
+*     while(ES!>=0.8 AS)
+*          attack();
+*          attacksp():
+*/
 
-//////////////////PHASE 2///////////////////////
 //void EarthTank::AttackSp() {
 //	for (int i = 0; i < attackCapacity; i++)
 //	{
@@ -61,7 +55,7 @@ EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int 
 //		ALienSoldierList->insert(temp);
 //	}
 //}
-/////////////////////////PHASE 2//////////////////////
+
 //void EarthTank::Attack() {
 //	if (ES->getCount() < 0.3 * AS->getCount())
 //	{
@@ -77,5 +71,3 @@ EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int 
 //	else
 //		AttackNor();
 //}
-
-

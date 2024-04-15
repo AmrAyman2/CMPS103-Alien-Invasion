@@ -4,7 +4,6 @@ AlienSoldier::AlienSoldier(int id,string Name,int tj, int hp, int pow, int attac
 //
 }
 
-//////////////////////PHASE 2////////////////////
 //void AlienSoldier::Attack(EarthArmy* army)
 //{
 //	int count = 0;

@@ -1,6 +1,12 @@
 #include "GameRules.h"
+//#include <iostream>
+//#include "ArmyUnits/Alien/AlienSoldier.h"
+//#include "AlienArmy.h"
+//#include "GameRules.h"
+//#include "Input.h"
 #include "Generator.h"
-
+//#include "EarthArmy.h"
+//#include "ArmyUnits/ArmyUnit.h"
 using namespace std;
 
 
@@ -84,8 +90,8 @@ void GameRules::test() {
 	Input* input = new Input();
 	AlienArmy* aliens = new AlienArmy;
 	EarthArmy* human = new EarthArmy;
-	//GameRules* game = new GameRules;
-	Generator* generator = new Generator(*input, *human, *aliens, *this);
+	GameRules* game = new GameRules;
+	Generator* generator = new Generator(*input, *human, *aliens, *game);
 	EarthSoldier* earthtop;
 	EarthTank* tanktop;
 	EarthGunnery* topgun;
@@ -95,17 +101,17 @@ void GameRules::test() {
 	AlienMonster* monstertop;
 	AlienDrone* dronetop;
 	AlienDrone* dronerear;
-	//LinkedQueue<ArmyUnit*> killedlist;
+	LinkedQueue<ArmyUnit*> riphaydar;
 	LinkedQueue<ArmyUnit*> templist;
 
 
-	int time = gettimeStep();
+	int time = game->gettimeStep();
 
 
 	for (int i = 0;i < 50;i++) {
 		generator->generateEarth();
 		generator->generateAlien();
-		int A = (rand() % (100)) + 1;
+		int A = (rand() % (100 - 1 + 1)) + 1;
 		if (A > 0 && A < 10) {
 			human->ES_List.dequeue(earthtop);
 			human->ES_List.enqueue(earthtop);
@@ -121,7 +127,6 @@ void GameRules::test() {
 			topgun->setHealth((*topgun->getHealth()) / 2);
 			human->EG_List.enqueue(topgun, trash);
 		}
-
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
 				aliens->AS_List.dequeue(alientop);
@@ -148,9 +153,7 @@ void GameRules::test() {
 				killedlist.enqueue(dronetop);
 			}
 		}
-		human->print();
-		aliens->print();
-		printDeadList();
+
 		time++;
 	}
 }

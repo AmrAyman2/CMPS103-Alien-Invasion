@@ -15,9 +15,6 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	return EG_List.enqueue(unit, highestcombo);
 }
 
-
-
-/////////////phase 2///////////
 //void EarthArmy::Attack(AlienArmy* alien)
 //{
 //	LinkedQueue <EarthSoldier*> temp = ES_List;
