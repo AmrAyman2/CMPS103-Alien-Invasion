@@ -104,6 +104,13 @@ void GameRules::test() {
 	LinkedQueue<ArmyUnit*> killedlist;
 	LinkedQueue<ArmyUnit*> templist;
 
+	LinkedQueue<EarthSoldier*> es_List;
+	ArrayStack<EarthTank*> et_List;
+	priQueue<EarthGunnery*> eg_List;
+	LinkedQueue<AlienSoldier*> as_List;
+	Deque<AlienDrone*> ad_List;
+	ArrayBag<AlienMonster*> am_List;
+
 
 	int time = game->gettimeStep();
 
@@ -119,7 +126,8 @@ void GameRules::test() {
 		}
 
 		else if (A > 10 && A < 20) {
-			human->getET_List().pop(tanktop);
+			human->getET_List(et_List);
+			et_List.pop(tanktop);
 			getkilledlist(killedlist);
 			killedlist.enqueue(tanktop);
 		}
@@ -131,7 +139,8 @@ void GameRules::test() {
 		}
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
-				aliens->getAS_List().dequeue(alientop);
+				aliens->getAS_List(as_List);
+				as_List.dequeue(alientop);
 				alientop->setHealth(*alientop->getHealth()-1);
 				templist.enqueue(alientop);
 			}
@@ -139,19 +148,23 @@ void GameRules::test() {
 
 		else if (A > 40 && A < 50) {
 			for (int k = 0; k < 5;k++) {
-				aliens->getAM_List().remove(monstertop);
-				aliens->getAM_List().add(monstertop);
+				aliens->getAM_List(am_List);
+				am_List.remove(monstertop);
+				aliens->getAM_List(am_List);
+				am_List.add(monstertop);
 			}
 		}
 
 		else if (A > 50 && A < 60) {
 			for (int z = 0;z < 6;z++) {
-				aliens->AD_List.dequeueRear(dronerear);
+				aliens->getAD_List(ad_List);
+				ad_List.dequeueRear(dronerear);
 				killedlist.enqueue(dronerear);
 
 			}
 			for (int m = 0;m < 6;m++) {
-				aliens->AD_List.dequeue(dronetop);
+				aliens->getAD_List(ad_List);
+				ad_List.dequeue(dronetop);
 				killedlist.enqueue(dronetop);
 			}
 		}
