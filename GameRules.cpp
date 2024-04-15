@@ -36,6 +36,9 @@ void GameRules::printDeadList() {
 			cout << temppointer->getID() << ",";
 	}
 }
+GameRules::GameRules()
+{
+}
 void GameRules::War() {
 	Input I1;           
 	EarthArmy Earth;    
@@ -61,12 +64,12 @@ void GameRules::War() {
 			//Earth.printArmy()
 			//Alien.printArmy()
 			//printDeadList()
-			if (Earth.getTotalCount() > 0 && Alien.getTotalCount() == 0)
+			if (Earth.getTotalCount() > 0 && Aliens.getTotalCount() == 0)
 			{
 				Winner = "Earth Army";
 				Victory = true;
 			}
-			else if (Alien.getTotalCount() > 0 && Earth.getTotalCount() == 0)
+			else if (Aliens.getTotalCount() > 0 && Earth.getTotalCount() == 0)
 			{
 				Winner = "Alien Army";
 				Victory = true;
@@ -113,23 +116,23 @@ void GameRules::test() {
 		generator->generateAlien();
 		int A = (rand() % (100 - 1 + 1)) + 1;
 		if (A > 0 && A < 10) {
-			human->ES_List.dequeue(earthtop);
-			human->ES_List.enqueue(earthtop);
+			human->getES_List().dequeue(earthtop);
+			human->getES_List().enqueue(earthtop);
 
 		}
 		else if (A > 10 && A < 20) {
-			human->ET_List.pop(tanktop);
+			human->getET_List().pop(tanktop);
 			getkilledlist(riphaydar);
 			riphaydar.enqueue(tanktop);
 		}
 		else if (A > 20 && A < 30) {
-			human->EG_List.dequeue(topgun, pri);
+			human->getEG_List().dequeue(topgun, pri);
 			topgun->setHealth((*topgun->getHealth()) / 2);
-			human->EG_List.enqueue(topgun, trash);
+			human->getEG_List().enqueue(topgun, trash);
 		}
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
-				aliens->AS_List.dequeue(alientop);
+				aliens->getAS_List().dequeue(alientop);
 				alientop->setHealth(*aliens->getHealth()-1);
 				templist.enqueue(alientop);
 
@@ -138,18 +141,18 @@ void GameRules::test() {
 		else if (A > 40 && A < 50) {
 			for (int k = 0; k < 5;k++) {
 
-				aliens->AM_List.remove(monstertop);
-				aliens->AM_List.add(monstertop);
+				aliens->getAM_List().remove(monstertop);
+				aliens->getAM_List().add(monstertop);
 			}
 		}
 		else if (A > 50 && A < 60) {
 			for (int z = 0;z < 6;z++) {
-				aliens->AD_List.dequeueRear(dronerear);
+				aliens->getAD_List().dequeueRear(dronerear);
 				killedlist.enqueue(dronerear);
 
 			}
 			for (int m = 0;m < 6;m++) {
-				aliens->AD_List.dequeue(dronetop);
+				aliens->getAD_List().dequeue(dronetop);
 				killedlist.enqueue(dronetop);
 			}
 		}

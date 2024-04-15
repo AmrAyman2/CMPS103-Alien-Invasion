@@ -1,5 +1,8 @@
 #include "EarthArmy.h"
-bool EarthArmy::AddUnit(EarthSoldier* unit) 
+EarthArmy::EarthArmy()
+{
+}
+bool EarthArmy::AddUnit(EarthSoldier* unit)
 {
 	return ES_List.enqueue(unit);
 }

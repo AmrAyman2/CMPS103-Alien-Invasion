@@ -1,4 +1,7 @@
 #include "AlienArmy.h"
+AlienArmy::AlienArmy()
+{
+}
 bool AlienArmy::AddUnit(AlienSoldier* unit) 
 {
 	return AS_List.enqueue(unit);
