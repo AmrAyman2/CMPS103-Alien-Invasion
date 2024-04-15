@@ -21,7 +21,7 @@ protected:
 
 public:
     // Constructor
-    ArmyUnit(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
+    ArmyUnit(int id = 0, string unitType ="", int jointime=0, int hp=0, int pow=0, int attackcap=0);
     // Member functions
     string getType() const;
     int getID() const;

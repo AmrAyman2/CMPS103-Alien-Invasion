@@ -6,14 +6,13 @@ where Front of deque is at index [0] & Rear of deque is at index [rearInd]. In c
 #pragma once
 #include "QueueADT.h"
 #include <iostream>
-#define MAX_SIZE 100;
 using namespace std;
 
 template <typename T>
 class Deque :public QueueADT<T>
 {
 	private:
-		T items[MAX_SIZE];   //array which holds items
+		T items[100];   //array which holds items
 		int rearInd;         //holds index of last element (in array) which is at rear of queue
 		                     //in case array is full it holds index [MAX_SIZE - 1]
 
@@ -30,7 +29,8 @@ class Deque :public QueueADT<T>
 		 the rear of the queue in array */
 		bool enqueue(const T& newEntry)
 		{
-			if (rearInd==MAX_SIZE-1) return false;
+			if (rearInd==100-1) 
+				return false;
 			else
 			{
 				items[rearInd+1] = newEntry;

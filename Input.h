@@ -1,7 +1,7 @@
 #pragma once
 class Input
 {
-protected:
+	private:
 
 	int N;
 	//Number of army units to generate each time step
