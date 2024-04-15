@@ -3,6 +3,7 @@
 class AlienSoldier : public ArmyUnit 
 {
 public:
+	Alien
 	AlienSoldier(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
 	//void Attack(EarthArmy* army); PHASE 2
 };

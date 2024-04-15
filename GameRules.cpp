@@ -98,7 +98,7 @@ void GameRules::test() {
 	AlienMonster* monstertop;
 	AlienDrone* dronetop;
 	AlienDrone* dronerear;
-	//LinkedQueue<ArmyUnit*> killedlist;
+	LinkedQueue<ArmyUnit*> killedlist;
 	LinkedQueue<ArmyUnit*> templist;
 
 
@@ -114,11 +114,13 @@ void GameRules::test() {
 			human->getES_List().enqueue(earthtop);
 
 		}
+
 		else if (A > 10 && A < 20) {
 			human->getET_List().pop(tanktop);
-			getkilledlist(riphaydar);
-			riphaydar.enqueue(tanktop);
+			getkilledlist(killedlist);
+			killedlist.enqueue(tanktop);
 		}
+
 		else if (A > 20 && A < 30) {
 			human->getEG_List().dequeue(topgun, pri);
 			topgun->setHealth((*topgun->getHealth()) / 2);
@@ -128,18 +130,18 @@ void GameRules::test() {
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
 				aliens->getAS_List().dequeue(alientop);
-				alientop->setHealth(*aliens->getHealth()-1);
+				alientop->setHealth(*alientop->getHealth()-1);
 				templist.enqueue(alientop);
-
 			}
 		}
+
 		else if (A > 40 && A < 50) {
 			for (int k = 0; k < 5;k++) {
-
 				aliens->getAM_List().remove(monstertop);
 				aliens->getAM_List().add(monstertop);
 			}
 		}
+
 		else if (A > 50 && A < 60) {
 			for (int z = 0;z < 6;z++) {
 				aliens->getAD_List().dequeueRear(dronerear);
@@ -151,6 +153,7 @@ void GameRules::test() {
 				killedlist.enqueue(dronetop);
 			}
 		}
+
 		human->print();
 		aliens->print();
 		printDeadList();

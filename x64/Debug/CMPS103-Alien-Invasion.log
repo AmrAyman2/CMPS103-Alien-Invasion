@@ -1,16 +1,74 @@
 ﻿  AlienArmy.cpp
   AlienDrone.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(2,12): error C2084: function 'AlienArmy::AlienArmy(void)' already has a body
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(15,2):
+  see previous definition of '{ctor}'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienDrone.cpp(3,13): error C2511: 'AlienDrone::AlienDrone(void)': overloaded member function not found in 'AlienDrone'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienDrone.h(4,7):
+  see declaration of 'AlienDrone'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienDrone.cpp(7,13): error C2511: 'AlienDrone::AlienDrone(int,std::string,int,int,int,int)': overloaded member function not found in 'AlienDrone'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienDrone.h(4,7):
+  see declaration of 'AlienDrone'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienDrone.cpp(7,133): error C2550: 'AlienDrone::{ctor}': constructor initializer lists are only allowed on constructor definitions
   AlienMonster.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(2,15): error C2511: 'AlienMonster::AlienMonster(void)': overloaded member function not found in 'AlienMonster'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.h(3,7):
+  see declaration of 'AlienMonster'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(5,15): error C2511: 'AlienMonster::AlienMonster(int,std::string,int,int,int,int)': overloaded member function not found in 'AlienMonster'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.h(3,7):
+  see declaration of 'AlienMonster'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(5,135): error C2550: 'AlienMonster::{ctor}': constructor initializer lists are only allowed on constructor definitions
   AlienSoldier.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(3,15): error C2511: 'AlienSoldier::AlienSoldier(void)': overloaded member function not found in 'AlienSoldier'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.h(3,7):
+  see declaration of 'AlienSoldier'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(6,15): error C2511: 'AlienSoldier::AlienSoldier(int,std::string,int,int,int,int)': overloaded member function not found in 'AlienSoldier'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.h(3,7):
+  see declaration of 'AlienSoldier'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(7,1): error C2550: 'AlienSoldier::{ctor}': constructor initializer lists are only allowed on constructor definitions
   ArmyUnit.cpp
   EarthGunnery.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthGunnery.cpp(3,15): error C2511: 'EarthGunnery::EarthGunnery(int,std::string,int,int,int,int)': overloaded member function not found in 'EarthGunnery'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthGunnery.h(3,7):
+  see declaration of 'EarthGunnery'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthGunnery.cpp(3,135): error C2550: 'EarthGunnery::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthGunnery.cpp(4,15): error C2511: 'EarthGunnery::EarthGunnery(void)': overloaded member function not found in 'EarthGunnery'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthGunnery.h(3,7):
+  see declaration of 'EarthGunnery'
+  
   EarthSoldier.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(2,15): error C2511: 'EarthSoldier::EarthSoldier(void)': overloaded member function not found in 'EarthSoldier'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.h(4,7):
+  see declaration of 'EarthSoldier'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(7,15): error C2511: 'EarthSoldier::EarthSoldier(int,std::string,int,int,int,int)': overloaded member function not found in 'EarthSoldier'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.h(4,7):
+  see declaration of 'EarthSoldier'
+  
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(8,1): error C2550: 'EarthSoldier::{ctor}': constructor initializer lists are only allowed on constructor definitions
   EarthTank.cpp
   EarthArmy.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(2,12): error C2084: function 'EarthArmy::EarthArmy(void)' already has a body
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\EarthArmy.h(15,2):
+  see previous definition of '{ctor}'
+  
   GameRules.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(119,18): error C2065: 'riphaydar': undeclared identifier
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(120,4): error C2065: 'riphaydar': undeclared identifier
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(131,34): error C2039: 'getHealth': is not a member of 'AlienArmy'
+  C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\AlienArmy.h(8,7):
+  see declaration of 'AlienArmy'
+  
   Generator.cpp
-C:\Users\hi\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Input.cpp
   main.cpp
   Generating Code...
-  CMPS103-Alien-Invasion.vcxproj -> C:\Users\hi\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
