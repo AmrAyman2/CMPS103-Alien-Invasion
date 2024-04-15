@@ -3,7 +3,7 @@
 #include"Generator.h"
 #include"EarthArmy.h"
 #include"AlienArmy.h"
-#include<iostream>
+//#include<iostream>
 using namespace std;
 
 class GameRules
@@ -12,11 +12,14 @@ private:
 	bool Victory=false;
 	string Winner;
 	int timeStep=1;
+	LinkedQueue<ArmyUnit*> killedlist;
 
 public:
 	GameRules();
-	void War();
+	//void War();
 	int gettimeStep();
-	void test();
+	void getkilledlist(LinkedQueue<ArmyUnit*> &ripbozo);
+	//void test();
+	int getDeadCount();
 	void printDeadList();
 };

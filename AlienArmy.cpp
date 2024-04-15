@@ -14,29 +14,29 @@ bool AlienArmy::AddUnit(AlienMonster* unit)
 	return AM_List.add(unit);
 }
 
-void AlienArmy::Attack(EarthArmy* earth)
-{
-	LinkedQueue <AlienSoldier*> temp = AS_List;
-	AlienSoldier* soldier;
-	while (!temp.isEmpty()) {
-		temp.dequeue(soldier);
-		soldier->Attack(earth);
-	}
-
-	Deque <AlienDrone*> temp2 = AD_List;
-	AlienDrone* drone1;
-	AlienDrone* drone2;
-	while (!temp.isEmpty() && temp2.dequeue(drone1) && temp2.dequeueRear(drone2))
-	{
-		temp2.dequeue(drone1);
-		drone1->Attack(earth);
-		temp2.dequeueRear(drone2);
-		drone2->Attack(earth);
-	}
-
-	ArrayBag<AlienMonster*> temp3 = AM_List;
-	//using random generator which is yet to be done
-}
+//void AlienArmy::Attack(EarthArmy* earth)
+//{
+//	LinkedQueue <AlienSoldier*> temp = AS_List;
+//	AlienSoldier* soldier;
+//	while (!temp.isEmpty()) {
+//		temp.dequeue(soldier);
+//		soldier->Attack(earth);
+//	}
+//
+//	Deque <AlienDrone*> temp2 = AD_List;
+//	AlienDrone* drone1;
+//	AlienDrone* drone2;
+//	while (!temp.isEmpty() && temp2.dequeue(drone1) && temp2.dequeueRear(drone2))
+//	{
+//		temp2.dequeue(drone1);
+//		drone1->Attack(earth);
+//		temp2.dequeueRear(drone2);
+//		drone2->Attack(earth);
+//	}
+//
+//	ArrayBag<AlienMonster*> temp3 = AM_List;
+//	//using random generator which is yet to be done
+//}
 
 int AlienArmy::AS_Count()
 {
@@ -54,7 +54,7 @@ void AlienArmy::AS_PrintID()
 {
 	LinkedQueue<AlienSoldier*> temp(AS_List);
 	AlienSoldier* temppointer;
-	cout << "[";
+	cout << AS_Count() << " AS " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -80,7 +80,7 @@ void AlienArmy::AD_PrintID()
 {
 	Deque<AlienDrone*> temp(AD_List);
 	AlienDrone* temppointer;
-	cout << "[";
+	cout << AD_Count() << " AD " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -97,7 +97,13 @@ int AlienArmy::AM_Count()
 
 void AlienArmy::AM_PrintID()
 {
+	cout << AM_Count() << " AM ";
 	AM_List.print();
+}
+
+int AlienArmy::getTotalCount()
+{
+	return (AS_Count() + AD_Count() + AM_Count());
 }
 
 void AlienArmy::print()
@@ -106,4 +112,19 @@ void AlienArmy::print()
 	AS_PrintID();
 	AD_PrintID();
 	AM_PrintID();
+}
+
+LinkedQueue<AlienSoldier*> AlienArmy::getAS_List()
+{
+	return AS_List;
+}
+
+Deque<AlienDrone*> AlienArmy::getAD_List()
+{
+	return AD_List;
+}
+
+ArrayBag<AlienMonster*> AlienArmy::getAM_List()
+{
+	return AM_List;
 }

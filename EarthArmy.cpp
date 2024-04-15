@@ -15,15 +15,15 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	return EG_List.enqueue(unit, highestcombo);
 }
 
-void EarthArmy::Attack(AlienArmy* alien)
-{
-	LinkedQueue <EarthSoldier*> temp = ES_List;
-	EarthSoldier* soldier;
-	while (!temp.isEmpty()) {
-		temp.dequeue(soldier);
-		soldier->Attack(alien);
-	}
-}
+//void EarthArmy::Attack(AlienArmy* alien)
+//{
+//	LinkedQueue <EarthSoldier*> temp = ES_List;
+//	EarthSoldier* soldier;
+//	while (!temp.isEmpty()) {
+//		temp.dequeue(soldier);
+//		soldier->Attack(alien);
+//	}
+//}
 
 int EarthArmy::ES_Count()
 {
@@ -41,7 +41,7 @@ void EarthArmy::ES_PrintID()
 {
 	LinkedQueue<EarthSoldier*> temp(ES_List);
 	EarthSoldier* temppointer;
-	cout << "[";
+	cout << ES_Count() << " ES " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		if (temp.isEmpty())
@@ -67,7 +67,7 @@ void EarthArmy::ET_PrintID()
 {
 	ArrayStack<EarthTank*> temp(ET_List);
 	EarthTank* temppointer;
-	cout << "[";
+	cout << ET_Count() << " ET " << "[";
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
 		if (temp.isEmpty())
@@ -95,7 +95,7 @@ void EarthArmy::EG_PrintID()
 	priQueue<EarthGunnery*> temp(EG_List);
 	EarthGunnery* temppointer;
 	int trash = 0;
-	cout << "[";
+	cout << EG_Count() << " EG " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer,trash);
 		if (temp.isEmpty())
@@ -105,10 +105,30 @@ void EarthArmy::EG_PrintID()
 	}
 }
 
+int EarthArmy::getTotalCount()
+{
+	return (ES_Count() + ET_Count() + EG_Count());
+}
+
 void EarthArmy::print()
 {
 	cout << "============== Earth Army Alive Units ==============" << endl;
 	ES_PrintID();
 	ET_PrintID();
 	EG_PrintID();
+}
+
+LinkedQueue<EarthSoldier*> EarthArmy::getES_List()
+{
+	return ES_List;
+}
+
+ArrayStack<EarthTank*> EarthArmy::getET_List()
+{
+	return ET_List;
+}
+
+priQueue<EarthGunnery*> EarthArmy::getEG_List()
+{
+	return EG_List;
 }
