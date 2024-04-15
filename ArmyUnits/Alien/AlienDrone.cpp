@@ -5,16 +5,6 @@ AlienDrone::AlienDrone()
 }
 
 AlienDrone::AlienDrone(int id, string name,int jt, int hp, int power, int attackCap) : ArmyUnit(id, name, jt, hp, power, attackCap) {}
-
-
-AlienDrone::AlienDrone(int id, const string& unitType, int jointime, int hp, int pow, int attackcap): ArmyUnit(id, unitType , jointime, hp, pow, attackcap) {}
-
-
-
-
-
-
-///////////////PHASE 2///////////////////
 //void AlienDrone::Attack(EarthArmy* army)
 //{
 //	int count = 0;
@@ -28,4 +18,4 @@ AlienDrone::AlienDrone(int id, const string& unitType, int jointime, int hp, int
 //		*gunneryattackedhp -= (power * health / 100) / sqrt(*gunneryattackedhp);
 //		count++;
 //	}
-//} 
+//}

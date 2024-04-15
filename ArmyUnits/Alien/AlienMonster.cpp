@@ -4,7 +4,6 @@ AlienMonster::AlienMonster()
 }
 AlienMonster::AlienMonster(int id,string name ,int jt, int hp, int power, int attackCap):ArmyUnit(id, name, jt, hp, power, attackCap) {}
 
-////////////////////////PHASE 2////////////////////////
 /*void AlienMonster::Attack(EarthArmy* army)
 {
 	int count = 0;

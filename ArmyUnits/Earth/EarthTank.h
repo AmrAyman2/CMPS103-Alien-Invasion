@@ -4,10 +4,11 @@ class EarthTank:public ArmyUnit
 {
 
 public:
-	EarthTank(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
+	EarthTank();
+	EarthTank(int id,string name, int tj, int hp, int power, int attackcap);
 	/*void AttackNor();
 	void AttackSp();
-	void Attack();*///PHASE 2////
+	void Attack();*/
 
 };
 
