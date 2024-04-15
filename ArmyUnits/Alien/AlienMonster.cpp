@@ -1,7 +1,7 @@
 #include "AlienMonster.h"
-AlienMonster::AlienMonster(int id, int jt, int hp, int power, int attackCap):ArmyUnit(id, "Alien Monster", jt, hp, power, attackCap) {}
+AlienMonster::AlienMonster(int id,string name ,int jt, int hp, int power, int attackCap):ArmyUnit(id, name, jt, hp, power, attackCap) {}
 
-void AlienMonster::Attack(EarthArmy* army)
+/*void AlienMonster::Attack(EarthArmy* army)
 {
 	int count = 0;
 	EarthTank* tankattacked; EarthSoldier* soldierattacked;
@@ -13,10 +13,10 @@ void AlienMonster::Attack(EarthArmy* army)
 		*soldierattackedhp -= (power * health / 100) / sqrt(*soldierattackedhp);
 		count++;
 	}
-}
+}*/
 
-ostream& operator<<(ostream& os, const AlienMonster monster)
+/*ostream& operator<<(ostream& os, const AlienMonster monster)
 {
 	
 	cout << monster.getID();
-}
+}*/
