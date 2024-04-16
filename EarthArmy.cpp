@@ -48,11 +48,13 @@ void EarthArmy::ES_PrintID()
 	cout << ES_Count() << " ES " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		if (temp.isEmpty())
+		cout << temppointer->getID() << ", ";
+		/*if (temp.isEmpty())
 			cout << temppointer->getID() << "]" << endl;
 		else
-		cout << temppointer->getID() << ",";
+		cout << temppointer->getID() << ",";*/
 	}
+	cout << "]" << endl;
 }
 
 int EarthArmy::ET_Count()
@@ -74,21 +76,29 @@ void EarthArmy::ET_PrintID()
 	cout << ET_Count() << " ET " << "[";
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
-		if (temp.isEmpty())
+		cout << temppointer->getID() << ", ";
+		/*if (temp.isEmpty())
 			cout << temppointer->getID() << "]" << endl;
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ",";*/
 	}
+	cout << "]" << endl;
 }
 
 int EarthArmy::EG_Count()
 {
-	priQueue<EarthGunnery*> temp(EG_List);
+	priQueue<EarthGunnery*> temp;
 	int EGcount = 0;
 	int trash = 0;
 	EarthGunnery* temppointer;
+	while (!EG_List.isEmpty()) {
+		EG_List.dequeue(temppointer, trash);
+		temp.enqueue(temppointer,trash);
+		EGcount++;
+	}
 	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer,trash);
+		temp.dequeue(temppointer, trash);
+		EG_List.enqueue(temppointer, trash);
 		EGcount++;
 	}
 	return EGcount;
@@ -96,17 +106,21 @@ int EarthArmy::EG_Count()
 
 void EarthArmy::EG_PrintID()
 {
-	priQueue<EarthGunnery*> temp(EG_List);
+	priQueue<EarthGunnery*> temp;
 	EarthGunnery* temppointer;
 	int trash = 0;
 	cout << EG_Count() << " EG " << "[";
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer,trash);
-		if (temp.isEmpty())
-			cout << temppointer->getID() << "]" << endl;
-		else
-			cout << temppointer->getID() << ",";
+	while (!EG_List.isEmpty()) {
+		EG_List.dequeue(temppointer, trash);
+		temp.enqueue(temppointer, trash);
+		cout<<temppointer->getID()<<", ";
+		//cout<<(*temppointer->getHealth() * temppointer->getPower());
 	}
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer, trash);
+		EG_List.enqueue(temppointer, trash);
+	}
+	cout << "]" << endl;
 }
 
 int EarthArmy::getTotalCount()

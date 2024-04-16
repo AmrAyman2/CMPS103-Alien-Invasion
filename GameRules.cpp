@@ -1,6 +1,6 @@
 #include "GameRules.h"
 #include "Generator.h"
-
+#include "ADS/priQueue.h"
 using namespace std;
 
 
@@ -24,11 +24,14 @@ void GameRules::printDeadList() {
 	cout << getDeadCount() << " units " << "[";				
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		if (temp.isEmpty())
+		cout << temppointer->getID() << ", " ;
+
+		/*if (temp.isEmpty())
 			cout << temppointer->getID() << "]" << endl;
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ",";*/
 	}
+	cout << "]" << endl;
 }
 //void GameRules::War() {
 //	Input I1;           
@@ -82,7 +85,8 @@ void GameRules::getkilledlist(LinkedQueue<ArmyUnit*>& ripkilled)
 }
 
 // Kamel ya bro @Ahmed Farouk
-void GameRules::test() {
+void GameRules::test() 
+{
 	Input* input = new Input();
 	AlienArmy* aliens = new AlienArmy;
 	EarthArmy* human = new EarthArmy;
@@ -90,8 +94,8 @@ void GameRules::test() {
 	Generator* generator = new Generator(*input, *human, *aliens, *this);
 	EarthSoldier* earthtop;
 	EarthTank* tanktop;
-	EarthGunnery* topgun;
-	int pri;
+	EarthGunnery* topgunMaverick;
+	int pri=0;
 	int trash=0;
 	AlienSoldier* alientop;
 	AlienMonster* monstertop;
@@ -104,7 +108,8 @@ void GameRules::test() {
 	int time = gettimeStep();
 
 
-	for (int i = 0;i < 50;i++) {
+	for (int i = 0;i < 50;i++) 
+{
 		generator->generateEarth();
 		generator->generateAlien();
 		int A = (rand() % (100)) + 1;
@@ -115,17 +120,41 @@ void GameRules::test() {
 		else if (A > 10 && A < 20) {
 			if (human->getET_List().pop(tanktop))
 			{
-				getkilledlist(killedlist);
+				//getkilledlist(killedlist);
 				killedlist.enqueue(tanktop);
 			}
 		}
 		else if (A > 20 && A < 30) {
 			//FIX THIS CRAP
-			if(human->getEG_List().dequeue(topgun, pri))
+			
+			/*if(human->getEG_List().dequeue(topgun, pri))
 			{
 				topgun->setHealth((*topgun->getHealth()) / 2);
-				human->getEG_List().enqueue(topgun, pri);
+				human->getEG_List().enqueue(topgun, pri/2);
+			}*/
+			/*if (!((human->getEG_List()).isEmpty()))
+			{
+				human->getEG_List().dequeue(topgunMaverick, pri);
+				topgunMaverick->setHealth(*(topgunMaverick->getHealth()) / 2);
+				human->getEG_List().enqueue(topgunMaverick, pri);
+			}*/
+			priQueue<EarthGunnery*> temp;
+			EarthGunnery* temppointer;
+			int trash ;
+			
+			while (!human->getEG_List().isEmpty()) {
+				human->getEG_List().dequeue(temppointer, trash);
+				temppointer->setHealth((*temppointer->getHealth() / 2));
+				//int newpri = (*temppointer->getHealth() * temppointer->getPower());
+				temp.enqueue(temppointer,trash);
+				
 			}
+			while (!temp.isEmpty()) {
+				temp.dequeue(temppointer, trash);
+				//int newpri = (*temppointer->getHealth() * temppointer->getPower());
+				human->getEG_List().enqueue(temppointer,trash);
+			}
+			
 		}
 
 		else if (A > 30 && A < 40) {
@@ -134,13 +163,17 @@ void GameRules::test() {
 				{
 					alientop->setHealth(*alientop->getHealth() - 1);
 					templist.enqueue(alientop);
+					ArmyUnit* au = alientop;
+					templist.dequeue(au);
+					alientop =(AlienSoldier*) au;
+					aliens->getAS_List().enqueue(alientop);
 				}
 			}
 		}
 		else if (A > 40 && A < 50) {
 			for (int k = 0; k < 5;k++) {
 
-				if(aliens->getAM_List().remove(monstertop))
+				if (aliens->getAM_List().remove(monstertop))
 					aliens->getAM_List().add(monstertop);
 			}
 		}

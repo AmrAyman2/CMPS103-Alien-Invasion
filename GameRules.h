@@ -19,7 +19,7 @@ public:
 	GameRules();
 	//void War();
 	int gettimeStep();
-	void getkilledlist(LinkedQueue<ArmyUnit*> &ripbozo);
+	void getkilledlist(LinkedQueue<ArmyUnit*> &kl);
 	void test();
 	int getDeadCount();
 	void printDeadList();

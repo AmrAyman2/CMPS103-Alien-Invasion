@@ -23,7 +23,7 @@ void Generator::generateEarth() {
 			{
 				jointime=(G1->gettimeStep());
 				id=nextEarthid++;
-				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_upper() + 1) + I1->geteHealth_lower());
+				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_lower() + 1) + I1->geteHealth_lower());
 				attackcap=(rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthSoldier* newSoldier = new EarthSoldier(id, "Earth Soldier", jointime, hp, power, attackcap);
@@ -33,7 +33,7 @@ void Generator::generateEarth() {
 			{
 				jointime=(G1->gettimeStep());
 				id=nextEarthid++;
-				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_upper() + 1) + I1->geteHealth_lower());
+				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_lower() + 1) + I1->geteHealth_lower());
 				attackcap=(rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthTank* newTank= new EarthTank(id, "Earth Tank", jointime, hp, power, attackcap);
@@ -43,7 +43,7 @@ void Generator::generateEarth() {
 			{
 				jointime=(G1->gettimeStep());
 				id=nextEarthid;
-				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_upper() + 1) + I1->geteHealth_lower());
+				hp=(rand() % (I1->geteHealth_upper() - I1->geteHealth_lower() + 1) + I1->geteHealth_lower());
 				attackcap=(rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthGunnery* newGunnery = new EarthGunnery(id, "Earth Gunnery", jointime, hp, power, attackcap);
@@ -66,7 +66,7 @@ void Generator::generateAlien() {
 			{
 				jointime = G1->gettimeStep();
 				id = nextAlienid++;
-				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_upper() + 1) + I1->getaHealth_lower());
+				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_lower() + 1) + I1->getaHealth_lower());
 				attackcap=(rand() % (I1->getaAttack_upper() - I1->getaAttack_lower() + 1) + I1->getaAttack_lower());
 				power=(rand() % (I1->getaPower_upper() - I1->getaPower_lower() + 1) + I1->getaPower_lower());
 				AlienSoldier* newaSoldier = new AlienSoldier(id,"Alien Soldier",jointime,hp,power,attackcap);
@@ -76,7 +76,7 @@ void Generator::generateAlien() {
 			{
 				jointime=(G1->gettimeStep());
 				id = nextAlienid++;
-				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_upper() + 1) + I1->getaHealth_lower());
+				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_lower() + 1) + I1->getaHealth_lower());
 				attackcap=(rand() % (I1->getaAttack_upper() - I1->getaAttack_lower() + 1) + I1->getaAttack_lower());
 				power=(rand() % (I1->getaPower_upper() - I1->getaPower_lower() + 1) + I1->getaPower_lower());
 				AlienMonster* newMonster = new AlienMonster(id,"Alien Monster",jointime,hp,power,attackcap);
@@ -86,7 +86,7 @@ void Generator::generateAlien() {
 			{
 				jointime=(G1->gettimeStep());
 				id=nextAlienid++;
-				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_upper() + 1) + I1->getaHealth_lower());
+				hp=(rand() % (I1->getaHealth_upper() - I1->getaHealth_lower() + 1) + I1->getaHealth_lower());
 				attackcap=(rand() % (I1->getaAttack_upper() - I1->getaAttack_lower() + 1) + I1->getaAttack_lower());
 				power=(rand() % (I1->getaPower_upper() - I1->getaPower_lower() + 1) + I1->getaPower_lower());
 				AlienDrone* newDrone = new AlienDrone(id, "Alien Drone", jointime, hp, power, attackcap);

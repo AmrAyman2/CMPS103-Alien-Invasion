@@ -60,6 +60,18 @@ class ArrayBag
 			}
 			return canRemoveItem;
 		}
+		bool pop(ItemType& anEntry)
+		{
+			if (isEmpty()) return false;
+			else
+			{
+                anEntry = items[itemCount - 1];
+				//items[0] = items[itemCount-1];
+			    itemCount--;
+			    return true;
+			}
+			
+		}
 		void clear()
 		{
 			itemCount = 0;

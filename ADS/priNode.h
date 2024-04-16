@@ -7,12 +7,12 @@ private :
 	int pri;	//priority of the item
 	priNode<T>* next; // Pointer to next node
 public :
-	priNode(const T& r_Item, int PRI)
+	priNode(const T r_Item, int PRI)
 	{
 		setItem(r_Item, PRI);
 		next = nullptr;
 	}
-	void setItem(const T& r_Item, int PRI)
+	void setItem(const T r_Item, int PRI)
 	{
 		item = r_Item;
 		pri = PRI;
