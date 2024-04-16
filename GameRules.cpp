@@ -90,8 +90,7 @@ void GameRules::test() {
 	Input* input = new Input();
 	AlienArmy* aliens = new AlienArmy;
 	EarthArmy* human = new EarthArmy;
-	GameRules* game = new GameRules;
-	Generator* generator = new Generator(*input, *human, *aliens, *game);
+	Generator* generator = new Generator(*input, *human, *aliens, *this);
 	EarthSoldier* earthtop;
 	EarthTank* tanktop;
 	EarthGunnery* topgun;
@@ -102,6 +101,8 @@ void GameRules::test() {
 	AlienDrone* dronetop;
 	AlienDrone* dronerear;
 	LinkedQueue<ArmyUnit*> killedlist;
+	int time = gettimeStep();
+	//LinkedQueue<ArmyUnit*> killedlist;
 	LinkedQueue<ArmyUnit*> templist;
 
 	LinkedQueue<EarthSoldier*> es_List;
@@ -112,13 +113,11 @@ void GameRules::test() {
 	ArrayBag<AlienMonster*> am_List;
 
 
-	int time = game->gettimeStep();
-
 
 	for (int i = 0;i < 50;i++) {
 		generator->generateEarth();
 		generator->generateAlien();
-		int A = (rand() % (100 - 1 + 1)) + 1;
+		int A = (rand() % (100)) + 1;
 		if (A > 0 && A < 10) {
 			human->ES_List.dequeue(earthtop);
 			human->ES_List.enqueue(earthtop);
@@ -165,10 +164,14 @@ void GameRules::test() {
 			for (int m = 0;m < 6;m++) {
 				aliens->getAD_List(ad_List);
 				ad_List.dequeue(dronetop);
+				aliens->AD_List().dequeue(dronetop);
 				killedlist.enqueue(dronetop);
 			}
 		}
 
+		human->print();
+		aliens->print();
+		printDeadList();
 		human->print();
 		aliens->print();
 		printDeadList();
