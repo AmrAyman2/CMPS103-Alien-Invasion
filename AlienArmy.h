@@ -12,7 +12,7 @@ private:
 	Deque<AlienDrone*> AD_List;
 	ArrayBag<AlienMonster*> AM_List;
 public:
-	AlienArmy();
+	AlienArmy() {};
 	bool AddUnit(AlienSoldier* unit);
 	bool AddUnit(AlienDrone* unit);
 	bool AddUnit(AlienMonster* unit);

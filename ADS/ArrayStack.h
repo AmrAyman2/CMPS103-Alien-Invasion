@@ -43,7 +43,6 @@ public:
 	bool pop(T& TopEntry)
 	{
 		if (isEmpty()) return false;
-
 		TopEntry = items[top];
 		top--;
 		return true;

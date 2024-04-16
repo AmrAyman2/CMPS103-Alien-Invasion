@@ -109,10 +109,12 @@ bool LinkedQueue<T>::enqueue( const T& newEntry)
 	Node<T>* newNodePtr = new Node<T>(newEntry);
 	// Insert the new node
 	if (isEmpty())	//special case if this is the first node to insert
+	{
 		frontPtr = newNodePtr; // The queue is empty
-	else
-		backPtr->setNext(newNodePtr); // The queue was not empty
-
+		backPtr = newNodePtr;
+		return true;
+	}
+	backPtr->setNext(newNodePtr); // The queue was not empty
 	backPtr = newNodePtr; // New node is the last node now
 	return true ;
 } // end enqueue
@@ -133,6 +135,14 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 {
 	if(isEmpty())
 		return false;
+
+	if (frontPtr == backPtr)
+	{
+		frntEntry = frontPtr->getItem();
+		delete frontPtr;
+		frontPtr = nullptr;
+		return true;
+	}
 
 	Node<T>* nodeToDeletePtr = frontPtr;
 	frntEntry = frontPtr->getItem();
@@ -174,18 +184,32 @@ bool LinkedQueue<T>:: peek(T& frntEntry) const
 template <typename T>
 LinkedQueue<T>::~LinkedQueue()
 {
-	//Note that the cout statements here is just for learning purpose
-	//They should be normally removed from the destructor
-	cout<<"\nStarting LinkedQueue destructor...";
-	cout<<"\nFreeing all nodes in the queue...";
+	Node<T>* Current = frontPtr;
+	while (Current)
+	{
+		Node<T>* Temp = Current;
+		Current = Current->getNext();
+		delete Temp;
+	}
 
-	//Free all nodes in the queue
-	T temp;
-	while(dequeue(temp));
-	
-	cout<<"\n Is LinkedQueue Empty now?? ==> "<<boolalpha<<isEmpty();
-	cout<<"\nEnding LinkedQueue destructor..."<<endl;
+	frontPtr = backPtr = nullptr;
 }
+
+//template <typename T>
+//LinkedQueue<T>::~LinkedQueue()
+//{
+//	//Note that the cout statements here is just for learning purpose
+//	//They should be normally removed from the destructor
+//	cout<<"\nStarting LinkedQueue destructor...";
+//	cout<<"\nFreeing all nodes in the queue...";
+//
+//	//Free all nodes in the queue
+//	T temp;
+//	while(dequeue(temp));
+//	
+//	cout<<"\n Is LinkedQueue Empty now?? ==> "<<boolalpha<<isEmpty();
+//	cout<<"\nEnding LinkedQueue destructor..."<<endl;
+//}
 
 template <typename T>
 LinkedQueue<T>::LinkedQueue(const LinkedQueue<T>& LQ)

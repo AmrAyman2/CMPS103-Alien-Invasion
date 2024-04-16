@@ -49,17 +49,29 @@ class ArrayBag
 			}
 			return hasRoomToAdd;
 		}
-		bool remove(const ItemType& anEntry)
+
+		bool remove(ItemType& anEntry)
 		{
-			int locatedIndex = getIndexOf(anEntry);
-			bool canRemoveItem = !isEmpty() && (locatedIndex > -1);
-			if (canRemoveItem)
+			if (isEmpty()) return false;
+			else
 			{
+				anEntry = items[itemCount - 1];
 				itemCount--;
-				items[locatedIndex] = items[itemCount];
+				return true;
 			}
-			return canRemoveItem;
 		}
+
+		//bool remove(const ItemType& anEntry)
+		//{
+		//	int locatedIndex = getIndexOf(anEntry);
+		//	bool canRemoveItem = !isEmpty() && (locatedIndex > -1);
+		//	if (canRemoveItem)
+		//	{
+		//		itemCount--;
+		//		items[locatedIndex] = items[itemCount];
+		//	}
+		//	return canRemoveItem;
+		//}
 		void clear()
 		{
 			itemCount = 0;
@@ -95,10 +107,13 @@ class ArrayBag
 		void print() {
 			cout << "[";
 			for (int i = 0; i < itemCount; i++) {
-				if (isEmpty())
+				if (isEmpty()) {
 					cout << items[i] << "]" << endl;
+					return;
+				}
 				else
 					cout << items[i] << ",";
 			}
+			cout << "]" << endl;
 		}
 };

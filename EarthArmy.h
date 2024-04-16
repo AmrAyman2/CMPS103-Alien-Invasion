@@ -12,7 +12,7 @@ private:
 	ArrayStack<EarthTank*> ET_List;
 	priQueue<EarthGunnery*> EG_List;
 public:
-	EarthArmy();
+	EarthArmy() {};
 	bool AddUnit(EarthSoldier* unit);
 	bool AddUnit(EarthTank* unit);
 	bool AddUnit(EarthGunnery* unit);

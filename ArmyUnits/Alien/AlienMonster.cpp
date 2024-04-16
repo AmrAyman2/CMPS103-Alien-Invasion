@@ -15,8 +15,8 @@ AlienMonster::AlienMonster(int id,string name ,int jt, int hp, int power, int at
 	}
 }*/
 
-/*ostream& operator<<(ostream& os, const AlienMonster monster)
+ostream& operator<<(ostream& os, const AlienMonster monster)
 {
-	
-	cout << monster.getID();
-}*/
+	os<< monster.getID();
+	return os;
+}

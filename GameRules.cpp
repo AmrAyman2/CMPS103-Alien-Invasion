@@ -24,17 +24,21 @@ int GameRules::getDeadCount()
 	return killedcount;
 }
 void GameRules::printDeadList() {
+	cout << endl;
 	cout << "============== Killed / Destructed Units ==============" << endl;
 	LinkedQueue<ArmyUnit*> temp;
 	ArmyUnit* temppointer;
 	cout << getDeadCount() << " units " << "[";				
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		if (temp.isEmpty())
+		if (temp.isEmpty()) {
 			cout << temppointer->getID() << "]" << endl;
+			return;
+		}
 		else
 			cout << temppointer->getID() << ",";
 	}
+	cout << "]" << endl;
 }
 //void GameRules::War() {
 //	Input I1;           
@@ -102,7 +106,6 @@ void GameRules::test() {
 	AlienDrone* dronerear;
 	LinkedQueue<ArmyUnit*> killedlist;
 	int time = gettimeStep();
-	//LinkedQueue<ArmyUnit*> killedlist;
 	LinkedQueue<ArmyUnit*> templist;
 
 	LinkedQueue<EarthSoldier*> es_List;
@@ -113,65 +116,75 @@ void GameRules::test() {
 	ArrayBag<AlienMonster*> am_List;
 
 
-
+	int A;
 	for (int i = 0;i < 50;i++) {
 		generator->generateEarth();
 		generator->generateAlien();
-		int A = (rand() % (100)) + 1;
+		A = (rand() % (100)) + 1;
 		if (A > 0 && A < 10) {
-			human->ES_List.dequeue(earthtop);
-			human->ES_List.enqueue(earthtop);
-
+			human->getES_List(es_List);
+			if(es_List.dequeue(earthtop)) es_List.enqueue(earthtop);
 		}
 
 		else if (A > 10 && A < 20) {
 			human->getET_List(et_List);
-			et_List.pop(tanktop);
-			getkilledlist(killedlist);
-			killedlist.enqueue(tanktop);
+			if (et_List.pop(tanktop))
+			{
+				getkilledlist(killedlist);
+				killedlist.enqueue(tanktop);
+			}
 		}
 
 		else if (A > 20 && A < 30) {
-			human->EG_List.dequeue(topgun, pri);
-			topgun->setHealth((*topgun->getHealth()) / 2);
-			human->EG_List.enqueue(topgun, trash);
+			human->getEG_List(eg_List);
+			if (eg_List.dequeue(topgun, trash))
+			{
+				topgun->setHealth((*topgun->getHealth()) / 2);
+				human->getEG_List(eg_List);
+				eg_List.enqueue(topgun, topgun->getPriority());
+			}
 		}
+
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
 				aliens->getAS_List(as_List);
-				as_List.dequeue(alientop);
-				alientop->setHealth(*alientop->getHealth()-1);
-				templist.enqueue(alientop);
+				if (as_List.dequeue(alientop))
+				{
+					alientop->setHealth(*alientop->getHealth() - 1);
+					templist.enqueue(alientop);
+					as_List.enqueue(alientop);
+				}
 			}
 		}
 
 		else if (A > 40 && A < 50) {
 			for (int k = 0; k < 5;k++) {
 				aliens->getAM_List(am_List);
-				am_List.remove(monstertop);
-				aliens->getAM_List(am_List);
-				am_List.add(monstertop);
+				if (am_List.remove(monstertop))
+				{
+					aliens->getAM_List(am_List);
+					am_List.add(monstertop);
+				}
 			}
 		}
 
 		else if (A > 50 && A < 60) {
 			for (int z = 0;z < 6;z++) {
 				aliens->getAD_List(ad_List);
-				ad_List.dequeueRear(dronerear);
+				if(ad_List.dequeueRear(dronerear))
 				killedlist.enqueue(dronerear);
-
 			}
 			for (int m = 0;m < 6;m++) {
 				aliens->getAD_List(ad_List);
-				ad_List.dequeue(dronetop);
-				aliens->AD_List().dequeue(dronetop);
-				killedlist.enqueue(dronetop);
+				if (ad_List.dequeue(dronetop))
+				{
+					aliens->getAD_List(ad_List);
+					ad_List.dequeue(dronetop);
+					killedlist.enqueue(dronetop);
+				}
 			}
 		}
 
-		human->print();
-		aliens->print();
-		printDeadList();
 		human->print();
 		aliens->print();
 		printDeadList();
