@@ -136,17 +136,20 @@ void EarthArmy::print()
 	EG_PrintID();
 }
 
-LinkedQueue<EarthSoldier*> EarthArmy::getES_List()
+LinkedQueue<EarthSoldier*>& EarthArmy::getES_List()
 {
 	return ES_List;
 }
 
-ArrayStack<EarthTank*> EarthArmy::getET_List()
+ArrayStack<EarthTank*>& EarthArmy::getET_List()
 {
 	return ET_List;
 }
 
-priQueue<EarthGunnery*> EarthArmy::getEG_List()
+priQueue<EarthGunnery*>& EarthArmy::getEG_List()
 {
 	return EG_List;
 }
+
+
+

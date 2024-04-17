@@ -103,7 +103,7 @@ void GameRules::test()
 	AlienDrone* dronerear;
 	//LinkedQueue<ArmyUnit*> killedlist;
 	LinkedQueue<ArmyUnit*> templist;
-
+	priQueue<EarthGunnery*> tempGun;
 
 	int time = gettimeStep();
 
@@ -138,21 +138,21 @@ void GameRules::test()
 				topgunMaverick->setHealth(*(topgunMaverick->getHealth()) / 2);
 				human->getEG_List().enqueue(topgunMaverick, pri);
 			}*/
-			priQueue<EarthGunnery*> temp;
-			EarthGunnery* temppointer;
-			int trash ;
 			
-			while (!human->getEG_List().isEmpty()) {
-				human->getEG_List().dequeue(temppointer, trash);
-				temppointer->setHealth((*temppointer->getHealth() / 2));
+		
+			
+			
+			if(!human->getEG_List().isEmpty()) {
+				human->getEG_List().dequeue(topgunMaverick, trash);
+				topgunMaverick->setHealth((*topgunMaverick->getHealth() / 2));
 				//int newpri = (*temppointer->getHealth() * temppointer->getPower());
-				temp.enqueue(temppointer,trash);
+				tempGun.enqueue(topgunMaverick,trash);
 				
 			}
-			while (!temp.isEmpty()) {
-				temp.dequeue(temppointer, trash);
+			if (!tempGun.isEmpty()) {
+				tempGun.dequeue(topgunMaverick, trash);
 				//int newpri = (*temppointer->getHealth() * temppointer->getPower());
-				human->getEG_List().enqueue(temppointer,trash);
+				human->getEG_List().enqueue(topgunMaverick,trash);
 			}
 			
 		}
