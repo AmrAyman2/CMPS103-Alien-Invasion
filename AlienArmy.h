@@ -30,4 +30,3 @@ public:
 	Deque<AlienDrone*> getAD_List();
 	ArrayBag<AlienMonster*> getAM_List();
 };
-
