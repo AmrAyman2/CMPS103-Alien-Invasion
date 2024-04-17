@@ -127,6 +127,7 @@ int AlienArmy::getTotalCount()
 
 void AlienArmy::print()
 {
+	cout << endl;
 	cout << "============== Alien Army Alive Units ==============" << endl;
 	AS_PrintID();
 	AD_PrintID();

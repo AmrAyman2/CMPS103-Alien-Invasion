@@ -1,4 +1,3 @@
-//#include <iostream>
 #include "Generator.h"
 #include"GameRules.h"
 using namespace std;
@@ -94,6 +93,5 @@ void Generator::generateAlien() {
 			}
 		}
 	}
-
 }
 

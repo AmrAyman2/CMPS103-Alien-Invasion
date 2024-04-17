@@ -16,8 +16,6 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	return EG_List.enqueue(unit, highestcombo);
 }
 
-
-
 /////////////phase 2///////////
 //void EarthArmy::Attack(AlienArmy* alien)
 //{
@@ -126,9 +124,7 @@ void EarthArmy::EG_PrintID()
 		}
 		else
 		cout<<temppointer->getID()<<", ";
-		//cout<<(*temppointer->getHealth() * temppointer->getPower());
 	}
-	
 	cout << "]" << endl;
 }
 
@@ -159,6 +155,3 @@ priQueue<EarthGunnery*>& EarthArmy::getEG_List()
 {
 	return EG_List;
 }
-
-
-

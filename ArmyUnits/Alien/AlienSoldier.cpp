@@ -1,9 +1,6 @@
 #include "AlienSoldier.h"
 
-
 AlienSoldier::AlienSoldier(int id, const string& unitType, int jointime, int hp, int pow, int attackcap) : ArmyUnit(id, unitType, jointime, hp, pow, attackcap) {}
-
-
 
 //////////////////////PHASE 2////////////////////
 //void AlienSoldier::Attack(EarthArmy* army)

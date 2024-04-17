@@ -2,7 +2,6 @@
 
 EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int pow, int attackcap) : ArmyUnit(id, unitType, jointime, hp, pow, attackcap){}
 
-
 ////////////////////////PHASE 2///////////////////////////////
 // Attack function of unit tank gets the required number of monsters and reduces its health
 // if dead its sent to dead list, else its ent to temp list
@@ -66,5 +65,3 @@ EarthTank::EarthTank (int id, const string& unitType, int jointime, int hp, int 
 //	else
 //		AttackNor();
 //}
-
-

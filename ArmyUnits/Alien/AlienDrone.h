@@ -3,8 +3,7 @@
 
 class AlienDrone : public ArmyUnit
 {
-public:
-	     AlienDrone(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
-		//void Attack(EarthArmy* army); PHASE 2
+	public:
+			 AlienDrone(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
+			//void Attack(EarthArmy* army); PHASE 2
 };
-

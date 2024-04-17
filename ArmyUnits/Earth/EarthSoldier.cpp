@@ -13,4 +13,3 @@ EarthSoldier::EarthSoldier(int id, const string& unitType, int jointime, int hp,
 //		count++;
 //	}
 //}
-
