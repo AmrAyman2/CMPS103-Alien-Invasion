@@ -47,7 +47,10 @@ class Deque :public QueueADT<T>
 			else
 			{
 				EntryZero = items[0];
-				items[0] = items[rearInd];
+				for (int i = 0; i < rearInd + 1; i++)
+				{
+					items[i] = items[i + 1];
+				}
 				rearInd--;
 				return true;
 			}
