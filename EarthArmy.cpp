@@ -49,10 +49,12 @@ void EarthArmy::ES_PrintID()
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
 		cout << temppointer->getID() << ", ";
-		/*if (temp.isEmpty())
+		if (temp.isEmpty()) {
 			cout << temppointer->getID() << "]" << endl;
+			return;
+		}
 		else
-		cout << temppointer->getID() << ",";*/
+			cout << temppointer->getID() << ",";
 	}
 	cout << "]" << endl;
 }
@@ -77,10 +79,13 @@ void EarthArmy::ET_PrintID()
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
 		cout << temppointer->getID() << ", ";
-		/*if (temp.isEmpty())
+		if (temp.isEmpty())
+		{
 			cout << temppointer->getID() << "]" << endl;
+			return;
+		}
 		else
-			cout << temppointer->getID() << ",";*/
+			cout << temppointer->getID() << ",";
 	}
 	cout << "]" << endl;
 }
@@ -113,13 +118,20 @@ void EarthArmy::EG_PrintID()
 	while (!EG_List.isEmpty()) {
 		EG_List.dequeue(temppointer, trash);
 		temp.enqueue(temppointer, trash);
+		if (EG_List.isEmpty())
+		{
+			cout << temppointer->getID() << "]" << endl;
+			while (!temp.isEmpty()) {
+				temp.dequeue(temppointer, trash);
+				EG_List.enqueue(temppointer, trash);
+			}
+			return;
+		}
+		else
 		cout<<temppointer->getID()<<", ";
 		//cout<<(*temppointer->getHealth() * temppointer->getPower());
 	}
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer, trash);
-		EG_List.enqueue(temppointer, trash);
-	}
+	
 	cout << "]" << endl;
 }
 
