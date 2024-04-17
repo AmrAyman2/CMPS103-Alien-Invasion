@@ -154,9 +154,7 @@ void GameRules::test()
 				//int newpri = (*temppointer->getHealth() * temppointer->getPower());
 				human->getEG_List().enqueue(topgunMaverick,trash);
 			}
-			
 		}
-
 		else if (A > 30 && A < 40) {
 			for (int j = 0;j < 5;j++) {
 				if (aliens->getAS_List().dequeue(alientop))

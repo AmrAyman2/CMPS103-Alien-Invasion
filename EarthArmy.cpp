@@ -104,7 +104,6 @@ int EarthArmy::EG_Count()
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer, trash);
 		EG_List.enqueue(temppointer, trash);
-		EGcount++;
 	}
 	return EGcount;
 }
