@@ -57,14 +57,13 @@ void AlienArmy::AS_PrintID()
 	cout << AS_Count() << " AS " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		cout << temppointer->getID() << ", ";
 		if (temp.isEmpty())
 		{
 			cout << temppointer->getID() << "]" << endl;
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -89,13 +88,12 @@ void AlienArmy::AD_PrintID()
 
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		cout << temppointer->getID() << ", ";
 		if (temp.isEmpty()) {
 			cout << temppointer->getID() << "]" << endl;
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -117,7 +115,7 @@ void AlienArmy::AM_PrintID()
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }

@@ -5,10 +5,10 @@ using namespace std;
 
 
 
-// Kamel ya bro @Ahmed Farouk
+
 int GameRules::getDeadCount()
 {
-	LinkedQueue<ArmyUnit*> temp;
+	LinkedQueue<ArmyUnit*> temp(getkilledlist());
 	int killedcount = 0;
 	ArmyUnit* temppointer;
 	while (!temp.isEmpty()) {
@@ -19,17 +19,17 @@ int GameRules::getDeadCount()
 }
 void GameRules::printDeadList() {
 	cout << "============== Killed / Destructed Units ==============" << endl;
-	LinkedQueue<ArmyUnit*> temp;
+	LinkedQueue<ArmyUnit*> temp(getkilledlist());
 	ArmyUnit* temppointer;
 	cout << getDeadCount() << " units " << "[";				
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		cout << temppointer->getID() << ", " ;
-
-		/*if (temp.isEmpty())
+		if (temp.isEmpty()) {
 			cout << temppointer->getID() << "]" << endl;
+			return;
+		}
 		else
-			cout << temppointer->getID() << ",";*/
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -79,9 +79,9 @@ int GameRules::gettimeStep() {
 	return timeStep;
 }
 
-void GameRules::getkilledlist(LinkedQueue<ArmyUnit*>& ripkilled)
+LinkedQueue<ArmyUnit*>& GameRules::getkilledlist()
 {
-	ripkilled = killedlist;
+	return killedlist;
 }
 
 // Kamel ya bro @Ahmed Farouk
@@ -120,8 +120,7 @@ void GameRules::test()
 		else if (A > 10 && A < 20) {
 			if (human->getET_List().pop(tanktop))
 			{
-				//getkilledlist(killedlist);
-				killedlist.enqueue(tanktop);
+				getkilledlist().enqueue(tanktop);
 			}
 		}
 		else if (A > 20 && A < 30) {
@@ -138,9 +137,6 @@ void GameRules::test()
 				topgunMaverick->setHealth(*(topgunMaverick->getHealth()) / 2);
 				human->getEG_List().enqueue(topgunMaverick, pri);
 			}*/
-			
-		
-			
 			
 			if(!human->getEG_List().isEmpty()) {
 				human->getEG_List().dequeue(topgunMaverick, trash);
@@ -178,17 +174,17 @@ void GameRules::test()
 		else if (A > 50 && A < 60) {
 			for (int z = 0;z <3 ;z++) {
 				if(aliens->getAD_List().dequeueRear(dronerear))
-					killedlist.enqueue(dronerear);
-
+					getkilledlist().enqueue(dronerear);
 			}
 			for (int m = 0;m < 3;m++) {
 				if(aliens->getAD_List().dequeue(dronetop))
-					killedlist.enqueue(dronetop);
+					getkilledlist().enqueue(dronetop);
 			}
 		}
 		human->print();
 		aliens->print();
 		printDeadList();
+		cout << endl;
 		time++;
 	}
 }

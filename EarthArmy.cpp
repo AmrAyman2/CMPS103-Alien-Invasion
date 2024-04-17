@@ -48,13 +48,12 @@ void EarthArmy::ES_PrintID()
 	cout << ES_Count() << " ES " << "[";
 	while (!temp.isEmpty()) {
 		temp.dequeue(temppointer);
-		cout << temppointer->getID() << ", ";
 		if (temp.isEmpty()) {
 			cout << temppointer->getID() << "]" << endl;
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -78,14 +77,13 @@ void EarthArmy::ET_PrintID()
 	cout << ET_Count() << " ET " << "[";
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
-		cout << temppointer->getID() << ", ";
 		if (temp.isEmpty())
 		{
 			cout << temppointer->getID() << "]" << endl;
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
