@@ -6,80 +6,60 @@ ArmyUnit::ArmyUnit(int id, const string& unitType, int tj, int hp, int pow, int 
     health(hp),
     power(pow),
     attackCapacity(attackCap)
-{
-    troopCount++;
-}
+{ troopCount++; }
 
 // Member function implementations
 int ArmyUnit::getID() const {
     return ID;
 }
-
 string ArmyUnit::getType() const {
     return type;
 }
-
 int ArmyUnit::getJoinTime() const {
     return TJ;
 }
-
 int* ArmyUnit::getHealth(){
     return &health;
 }
-
 int ArmyUnit::getPower() const {
     return power;
 }
-
 int ArmyUnit::getAttackCapacity() const {
     return attackCapacity;
 }
-
 void ArmyUnit::setID(int id) {
     ID = id;
 }
-
 void ArmyUnit::setHealth(int h) {
     health = h;
 }
-
 void ArmyUnit::setAttackCapacity(int a) {
     attackCapacity = a;
 }
-
 void ArmyUnit::setPower(int p) {
     power = p;
 }
-
-void ArmyUnit::printID()
-{
+void ArmyUnit::printID(){
     cout << ID << endl;
 }
-
 int ArmyUnit::getTroopCount() {
     return troopCount;
 }
-
 void ArmyUnit::setJoinTime(int jointime) {
     TJ = jointime;
 }
-
 void ArmyUnit::setTA(int ta) {
     Ta = ta;
 }
-
 void ArmyUnit::setTD(int td) {
     Td = td;
 }
-
 void ArmyUnit::setDF(int df) {
     Df = df;
 }
-
 void ArmyUnit::setDd(int dd) {
     Dd = dd;
 }
-
 void ArmyUnit::setBt(int bt) {
     Bt = bt;
 }

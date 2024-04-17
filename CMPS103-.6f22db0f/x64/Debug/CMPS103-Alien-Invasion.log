@@ -1,0 +1,3 @@
+﻿  GameRules.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\GameRules.cpp(97,16): warning C4101: 'topgunMaverick': unreferenced local variable
+  CMPS103-Alien-Invasion.vcxproj -> C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe

@@ -1,5 +1,5 @@
 /*This is a program that implements the double-ended queue (Deque) using Array implementation.
-The Deque is implemented such that you can add to the end of the queue and remove from both ends of it,
+The Deque is implemented such that you can add to the end of the queue and remove from both/ ends of it,
 where Front of deque is at index [0] & Rear of deque is at index [rearInd]. In case array is full rearInd = MAX_SIZE - 1
 */
 

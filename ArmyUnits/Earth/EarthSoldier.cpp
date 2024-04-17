@@ -16,4 +16,3 @@ EarthSoldier::EarthSoldier(int id,string name, int tj, int hp, int power, int at
 //		count++;
 //	}
 //}
-

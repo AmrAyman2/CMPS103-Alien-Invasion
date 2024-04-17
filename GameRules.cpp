@@ -1,20 +1,11 @@
 #include "GameRules.h"
-//#include <iostream>
-//#include "ArmyUnits/Alien/AlienSoldier.h"
-//#include "AlienArmy.h"
-//#include "GameRules.h"
-//#include "Input.h"
 #include "Generator.h"
-//#include "EarthArmy.h"
-//#include "ArmyUnits/ArmyUnit.h"
+#include "ADS/priQueue.h"
 using namespace std;
 
-
-
-// Kamel ya bro @Ahmed Farouk
 int GameRules::getDeadCount()
 {
-	LinkedQueue<ArmyUnit*> temp;
+	LinkedQueue<ArmyUnit*> temp(getkilledlist());
 	int killedcount = 0;
 	ArmyUnit* temppointer;
 	while (!temp.isEmpty()) {
@@ -23,10 +14,11 @@ int GameRules::getDeadCount()
 	}
 	return killedcount;
 }
+
 void GameRules::printDeadList() {
 	cout << endl;
-	cout << "============== Killed / Destructed Units ==============" << endl;
-	LinkedQueue<ArmyUnit*> temp;
+	cout << "============== Killed / Destructed Units ===========" << endl;
+	LinkedQueue<ArmyUnit*> temp(getkilledlist());
 	ArmyUnit* temppointer;
 	cout << getDeadCount() << " units " << "[";				
 	while (!temp.isEmpty()) {
@@ -36,7 +28,7 @@ void GameRules::printDeadList() {
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -80,116 +72,103 @@ void GameRules::printDeadList() {
 //	}
 //}
 
+GameRules::GameRules(){}
+
 int GameRules::gettimeStep() {
 	return timeStep;
 }
 
-void GameRules::getkilledlist(LinkedQueue<ArmyUnit*>& ripkilled)
+LinkedQueue<ArmyUnit*>& GameRules::getkilledlist()
 {
-	ripkilled = killedlist;
+	return killedlist;
 }
 
-// Kamel ya bro @Ahmed Farouk
-void GameRules::test() {
+void GameRules::test() 
+{
 	Input* input = new Input();
 	AlienArmy* aliens = new AlienArmy;
 	EarthArmy* human = new EarthArmy;
+	//GameRules* game = new GameRules;
 	Generator* generator = new Generator(*input, *human, *aliens, *this);
 	EarthSoldier* earthtop;
 	EarthTank* tanktop;
-	EarthGunnery* topgun;
-	int pri;
+	EarthGunnery* topgunMaverick;
 	int trash=0;
 	AlienSoldier* alientop;
 	AlienMonster* monstertop;
 	AlienDrone* dronetop;
 	AlienDrone* dronerear;
-	LinkedQueue<ArmyUnit*> killedlist;
-	int time = gettimeStep();
 	LinkedQueue<ArmyUnit*> templist;
+	priQueue<EarthGunnery*> tempGun;
 
-	LinkedQueue<EarthSoldier*> es_List;
-	ArrayStack<EarthTank*> et_List;
-	priQueue<EarthGunnery*> eg_List;
-	LinkedQueue<AlienSoldier*> as_List;
-	Deque<AlienDrone*> ad_List;
-	ArrayBag<AlienMonster*> am_List;
+	int time = gettimeStep();
 
-
-	int A;
-	for (int i = 0;i < 50;i++) {
-		generator->generateEarth();
-		generator->generateAlien();
-		A = (rand() % (100)) + 1;
-		if (A > 0 && A < 10) {
-			human->getES_List(es_List);
-			if(es_List.dequeue(earthtop)) es_List.enqueue(earthtop);
-		}
-
-		else if (A > 10 && A < 20) {
-			human->getET_List(et_List);
-			if (et_List.pop(tanktop))
-			{
-				getkilledlist(killedlist);
-				killedlist.enqueue(tanktop);
+	for (int i = 0;i < 50;i++) 
+	{
+			cout << "                     Time Step: " << i+1 << endl;
+			generator->generateEarth();
+			generator->generateAlien();
+			int A = (rand() % (100)) + 1;
+			if (A > 0 && A < 10) {
+				if(human->getES_List().dequeue(earthtop))
+				human->getES_List().enqueue(earthtop);
 			}
-		}
-
-		else if (A > 20 && A < 30) {
-			human->getEG_List(eg_List);
-			if (eg_List.dequeue(topgun, trash))
-			{
-				topgun->setHealth((*topgun->getHealth()) / 2);
-				human->getEG_List(eg_List);
-				eg_List.enqueue(topgun, topgun->getPriority());
-			}
-		}
-
-		else if (A > 30 && A < 40) {
-			for (int j = 0;j < 5;j++) {
-				aliens->getAS_List(as_List);
-				if (as_List.dequeue(alientop))
+			else if (A > 10 && A < 20) {
+				if (human->getET_List().pop(tanktop))
 				{
-					alientop->setHealth(*alientop->getHealth() - 1);
-					templist.enqueue(alientop);
-					as_List.enqueue(alientop);
+					getkilledlist().enqueue(tanktop);
 				}
 			}
-		}
-
-		else if (A > 40 && A < 50) {
-			for (int k = 0; k < 5;k++) {
-				aliens->getAM_List(am_List);
-				if (am_List.remove(monstertop))
-				{
-					aliens->getAM_List(am_List);
-					am_List.add(monstertop);
+			else if (A > 20 && A < 30) {
+				if(!human->getEG_List().isEmpty()) {
+					human->getEG_List().dequeue(topgunMaverick, trash);
+					topgunMaverick->setHealth((*topgunMaverick->getHealth() / 2));
+					int newpri = (*topgunMaverick->getHealth() * topgunMaverick->getPower());
+					tempGun.enqueue(topgunMaverick,newpri);
+				}
+				if (!tempGun.isEmpty()) {
+					tempGun.dequeue(topgunMaverick, trash);
+					int newpri2 = (*topgunMaverick->getHealth() * topgunMaverick->getPower());
+					human->getEG_List().enqueue(topgunMaverick,newpri2);
 				}
 			}
-		}
-
-		else if (A > 50 && A < 60) {
-			for (int z = 0;z < 6;z++) {
-				aliens->getAD_List(ad_List);
-				if(ad_List.dequeueRear(dronerear))
-				killedlist.enqueue(dronerear);
-			}
-			for (int m = 0;m < 6;m++) {
-				aliens->getAD_List(ad_List);
-				if (ad_List.dequeue(dronetop))
-				{
-					aliens->getAD_List(ad_List);
-					ad_List.dequeue(dronetop);
-					killedlist.enqueue(dronetop);
+			else if (A > 30 && A < 40) {
+				for (int j = 0;j < 5;j++) {
+					if (aliens->getAS_List().dequeue(alientop))
+					{
+						alientop->setHealth(*alientop->getHealth() - 1);
+						templist.enqueue(alientop);
+						ArmyUnit* au = alientop;
+						templist.dequeue(au);
+						alientop =(AlienSoldier*) au;
+						aliens->getAS_List().enqueue(alientop);
+					}
 				}
 			}
-		}
+			else if (A > 40 && A < 50) {
+				for (int k = 0; k < 5;k++) {
 
-		human->print();
-		aliens->print();
-		printDeadList();
-		time++;
-	}
+					if (aliens->getAM_List().remove(monstertop))
+						aliens->getAM_List().add(monstertop);
+				}
+			}
+			else if (A > 50 && A < 60) {
+				for (int z = 0;z <3 ;z++) {
+					if(aliens->getAD_List().dequeueRear(dronerear))
+						getkilledlist().enqueue(dronerear);
+				}
+				for (int m = 0;m < 3;m++) {
+					if(aliens->getAD_List().dequeue(dronetop))
+						getkilledlist().enqueue(dronetop);
+				}
+			}
+			human->print();
+			aliens->print();
+			printDeadList();
+			cout << endl;
+			cout << endl;
+			time++;
+		}
 }
 
 

@@ -6,7 +6,6 @@ a frontPtr pointer for the front of the queue and a backPtr pointer for the back
 */
 
 /*
-
 				The Node: item of type T and a "next" pointer
 					------------- 
 					| item| next | --->
@@ -109,12 +108,10 @@ bool LinkedQueue<T>::enqueue( const T& newEntry)
 	Node<T>* newNodePtr = new Node<T>(newEntry);
 	// Insert the new node
 	if (isEmpty())	//special case if this is the first node to insert
-	{
 		frontPtr = newNodePtr; // The queue is empty
-		backPtr = newNodePtr;
-		return true;
-	}
-	backPtr->setNext(newNodePtr); // The queue was not empty
+	else
+		backPtr->setNext(newNodePtr); // The queue was not empty
+
 	backPtr = newNodePtr; // New node is the last node now
 	return true ;
 } // end enqueue
@@ -135,14 +132,6 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 {
 	if(isEmpty())
 		return false;
-
-	if (frontPtr == backPtr)
-	{
-		frntEntry = frontPtr->getItem();
-		delete frontPtr;
-		frontPtr = nullptr;
-		return true;
-	}
 
 	Node<T>* nodeToDeletePtr = frontPtr;
 	frntEntry = frontPtr->getItem();
@@ -180,7 +169,6 @@ bool LinkedQueue<T>:: peek(T& frntEntry) const
 
 }
 ///////////////////////////////////////////////////////////////////////////////////
-
 template <typename T>
 LinkedQueue<T>::~LinkedQueue()
 {
@@ -192,9 +180,9 @@ LinkedQueue<T>::~LinkedQueue()
 		delete Temp;
 	}
 
-	frontPtr = backPtr = nullptr;
+	frontPtr = nullptr;
+		backPtr = nullptr;
 }
-
 //template <typename T>
 //LinkedQueue<T>::~LinkedQueue()
 //{

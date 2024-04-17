@@ -8,13 +8,9 @@
   EarthTank.cpp
   EarthArmy.cpp
   GameRules.cpp
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\GameRules.cpp(101,6): warning C4101: 'pri': unreferenced local variable
   Generator.cpp
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\Generator.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\Generator.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Input.cpp
   main.cpp
   Generating Code...
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ADS\priQueue.h(53): warning C4715: 'priQueue<EarthGunnery *>::dequeue': not all control paths return a value
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(16): warning C4715: 'EarthArmy::AddUnit': not all control paths return a value
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ADS\priQueue.h(53): warning C4715: 'priQueue<EarthGunnery *>::dequeue': not all control paths return a value
   CMPS103-Alien-Invasion.vcxproj -> C:\Users\Omar\Source\Repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe

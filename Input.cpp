@@ -23,8 +23,6 @@ Input::Input() {
 	infile.close();
 }
 
-
-
 int Input::getN() {
 	return N;
 }

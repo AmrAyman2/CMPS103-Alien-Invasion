@@ -1,14 +1,6 @@
 #include "EarthGunnery.h"
 
-EarthGunnery::EarthGunnery(int id,string name, int tj, int hp, int power, int attackcap):ArmyUnit(id, name, tj, hp, power, attackcap) {}
+EarthGunnery::EarthGunnery(int id, const string& unitType, int jointime, int hp, int pow, int attackcap) :ArmyUnit(id, unitType, jointime, hp, pow, attackcap) {}
 
-int EarthGunnery::getPriority()
-{
-	return (power * health);
-}
-
-//void EarthGunnery::Attack(AlienArmy* army)
-//{
-//
-//
-//}
+//////////////////PHASE 2//////////////////
+//void EarthGunnery::Attack(AlienArmy* army){} 

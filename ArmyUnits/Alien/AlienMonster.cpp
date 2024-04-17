@@ -1,6 +1,8 @@
 #include "AlienMonster.h"
-AlienMonster::AlienMonster(int id,string name ,int jt, int hp, int power, int attackCap):ArmyUnit(id, name, jt, hp, power, attackCap) {}
 
+AlienMonster::AlienMonster(int id, const string& unitType, int jointime, int hp, int pow, int attackcap): ArmyUnit(id, unitType, jointime, hp, pow, attackcap) {}
+
+////////////////////////PHASE 2////////////////////////
 /*void AlienMonster::Attack(EarthArmy* army)
 {
 	int count = 0;
@@ -15,8 +17,8 @@ AlienMonster::AlienMonster(int id,string name ,int jt, int hp, int power, int at
 	}
 }*/
 
-ostream& operator<<(ostream& os, const AlienMonster monster)
+/*ostream& operator<<(ostream& os, const AlienMonster monster)
 {
-	os<< monster.getID();
-	return os;
-}
+	
+	cout << monster.getID();
+}*/

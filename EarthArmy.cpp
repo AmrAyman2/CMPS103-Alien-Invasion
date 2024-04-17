@@ -1,5 +1,6 @@
 #include "EarthArmy.h"
-bool EarthArmy::AddUnit(EarthSoldier* unit) 
+
+bool EarthArmy::AddUnit(EarthSoldier* unit)
 {
 	return ES_List.enqueue(unit);
 }
@@ -12,9 +13,10 @@ bool EarthArmy::AddUnit(EarthTank* unit)
 bool EarthArmy::AddUnit(EarthGunnery* unit)
 {
 	int highestcombo = (*unit->getHealth() * unit->getPower()); //highest product of health and power of unit is best
-	if(EG_List.enqueue(unit, highestcombo)) return true;
+	return EG_List.enqueue(unit, highestcombo);
 }
 
+/////////////phase 2///////////
 //void EarthArmy::Attack(AlienArmy* alien)
 //{
 //	LinkedQueue <EarthSoldier*> temp = ES_List;
@@ -49,7 +51,7 @@ void EarthArmy::ES_PrintID()
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
@@ -73,43 +75,55 @@ void EarthArmy::ET_PrintID()
 	cout << ET_Count() << " ET " << "[";
 	while (!temp.isEmpty()) {
 		temp.pop(temppointer);
-		if (temp.isEmpty()) {
+		if (temp.isEmpty())
+		{
 			cout << temppointer->getID() << "]" << endl;
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+			cout << temppointer->getID() << ", ";
 	}
 	cout << "]" << endl;
 }
 
 int EarthArmy::EG_Count()
 {
-	priQueue<EarthGunnery*> temp(EG_List);
+	priQueue<EarthGunnery*> temp;
 	int EGcount = 0;
 	int trash = 0;
 	EarthGunnery* temppointer;
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer,trash);
+	while (!EG_List.isEmpty()) {
+		EG_List.dequeue(temppointer, trash);
+		temp.enqueue(temppointer,trash);
 		EGcount++;
+	}
+	while (!temp.isEmpty()) {
+		temp.dequeue(temppointer, trash);
+		EG_List.enqueue(temppointer, trash);
 	}
 	return EGcount;
 }
 
 void EarthArmy::EG_PrintID()
 {
-	priQueue<EarthGunnery*> temp(EG_List);
+	priQueue<EarthGunnery*> temp;
 	EarthGunnery* temppointer;
 	int trash = 0;
 	cout << EG_Count() << " EG " << "[";
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer, trash);
-		if (temp.isEmpty()) {
+	while (!EG_List.isEmpty()) {
+		EG_List.dequeue(temppointer, trash);
+		temp.enqueue(temppointer, trash);
+		if (EG_List.isEmpty())
+		{
 			cout << temppointer->getID() << "]" << endl;
+			while (!temp.isEmpty()) {
+				temp.dequeue(temppointer, trash);
+				EG_List.enqueue(temppointer, trash);
+			}
 			return;
 		}
 		else
-			cout << temppointer->getID() << ",";
+		cout<<temppointer->getID()<<", ";
 	}
 	cout << "]" << endl;
 }
@@ -121,26 +135,23 @@ int EarthArmy::getTotalCount()
 
 void EarthArmy::print()
 {
-	cout << endl;
 	cout << "============== Earth Army Alive Units ==============" << endl;
 	ES_PrintID();
 	ET_PrintID();
 	EG_PrintID();
 }
 
-void EarthArmy::getES_List(LinkedQueue<EarthSoldier*>& list)
+LinkedQueue<EarthSoldier*>& EarthArmy::getES_List()
 {
-	list = ES_List;
+	return ES_List;
 }
 
-void EarthArmy::getET_List(ArrayStack<EarthTank*>& list)
+ArrayStack<EarthTank*>& EarthArmy::getET_List()
 {
-	list = ET_List;
+	return ET_List;
 }
 
-void EarthArmy::getEG_List(priQueue<EarthGunnery*>& list)
+priQueue<EarthGunnery*>& EarthArmy::getEG_List()
 {
-	list = EG_List;
+	return EG_List;
 }
-
-

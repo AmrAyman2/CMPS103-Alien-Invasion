@@ -18,7 +18,7 @@ public:
     }
 
     //insert the new node in its correct position according to its priority
-    bool enqueue(const T& data, int priority) {
+    bool enqueue(const T data, int priority) {
         priNode<T>* newNode = new priNode<T>(data, priority);
         if (isEmpty() || priority > head->getPri()) 
         {
@@ -41,15 +41,13 @@ public:
         if (isEmpty())
             return false;
 
-            topEntry = head->getItem(pri);
-            priNode<T>* temp = head;
-
-            head = head->getNext();
-        if (temp)
-        {
-            delete temp;
-            return true;
-        }
+        topEntry = head->getItem(pri);
+        priNode<T>* temp = head;
+        head = head->getNext();
+        delete temp;
+        return true;
+       
+        
     }
 
     bool peek(T& topEntry, int& pri) {
