@@ -1,7 +1,7 @@
 ﻿  AlienArmy.cpp
   GameRules.cpp
   Generator.cpp
-C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\Generator.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\Generator.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.cpp
   Generating Code...
-  CMPS103-Alien-Invasion.vcxproj -> C:\Users\Omar\Source\Repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
+  CMPS103-Alien-Invasion.vcxproj -> C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
