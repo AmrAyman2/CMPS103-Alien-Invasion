@@ -26,7 +26,7 @@ class AlienArmy
 			int getTotalCount();
 			void print();
 
-			LinkedQueue<AlienSoldier*> getAS_List();
-			Deque<AlienDrone*> getAD_List();
-			ArrayBag<AlienMonster*> getAM_List();
+			LinkedQueue<AlienSoldier*>& getAS_List();
+			Deque<AlienDrone*>& getAD_List();
+			ArrayBag<AlienMonster*>& getAM_List();
 };

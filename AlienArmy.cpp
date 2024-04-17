@@ -134,17 +134,17 @@ void AlienArmy::print()
 	AM_PrintID();
 }
 
-LinkedQueue<AlienSoldier*> AlienArmy::getAS_List()
+LinkedQueue<AlienSoldier*>& AlienArmy::getAS_List()
 {
 	return AS_List;
 }
 
-Deque<AlienDrone*> AlienArmy::getAD_List()
+Deque<AlienDrone*>& AlienArmy::getAD_List()
 {
 	return AD_List;
 }
 
-ArrayBag<AlienMonster*> AlienArmy::getAM_List()
+ArrayBag<AlienMonster*>& AlienArmy::getAM_List()
 {
 	return AM_List;
 }
