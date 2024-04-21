@@ -12,8 +12,10 @@ void EarthSoldier::Attack(GameRules* game, AlienArmy* army)
 	while (army->getAS_List().dequeue(unitattacked) && count < attackCapacity) {
 		int* unitattackedhp = unitattacked->getHealth();
 		*unitattackedhp -= (power * health / 100) / sqrt(*unitattackedhp);
-		if (*unitattacked->getHealth() <= 0)
+		if (*unitattacked->getHealth() <= 0) {
 			game->getkilledlist().enqueue(unitattacked);
+			unitattacked->setTD(game->gettimeStep());
+		}
 		else
 			army->getAS_List().enqueue(unitattacked);
 		count++;
