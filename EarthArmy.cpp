@@ -1,4 +1,6 @@
 #include "EarthArmy.h"
+#include "AlienArmy.h"
+#include "GameRules.h"
 
 bool EarthArmy::AddUnit(EarthSoldier* unit)
 {
@@ -15,17 +17,6 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 	int highestcombo = (*unit->getHealth() * unit->getPower()); //highest product of health and power of unit is best
 	return EG_List.enqueue(unit, highestcombo);
 }
-
-/////////////phase 2///////////
-//void EarthArmy::Attack(AlienArmy* alien)
-//{
-//	LinkedQueue <EarthSoldier*> temp = ES_List;
-//	EarthSoldier* soldier;
-//	while (!temp.isEmpty()) {
-//		temp.dequeue(soldier);
-//		soldier->Attack(alien);
-//	}
-//}
 
 int EarthArmy::ES_Count()
 {
@@ -139,6 +130,28 @@ void EarthArmy::print()
 	ES_PrintID();
 	ET_PrintID();
 	EG_PrintID();
+}
+
+void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
+{
+	EarthSoldier* earthsold;
+	EarthGunnery* earthgunnery;
+	EarthTank* earthtank;
+	for (int i = 0; i < ES_Count(); i++) {
+		ES_List.dequeue(earthsold);
+		earthsold->Attack(game,alien);
+		ES_List.enqueue(earthsold);
+	}
+	/*for (int i = 0; i < EG_Count(); i++) {
+		EG_List.dequeue(earthgunnery);
+		earthgunnery->Attack(game, alien);
+		EG_List.enqueue(earthgunnery);
+	}
+	for (int i = 0; i < ET_Count(); i++) {
+		ET_List.pop(earthtank);
+		earthtank->Attack(game, alien);
+		ET_List.push(earthtank);
+	}*/
 }
 
 LinkedQueue<EarthSoldier*>& EarthArmy::getES_List()

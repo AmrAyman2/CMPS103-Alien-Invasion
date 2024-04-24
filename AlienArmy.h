@@ -5,6 +5,8 @@
 #include "ADS/Deque.h"
 #include "ADS/ArrayBag.h"
 #include "ADS/LinkedQueue.h"
+class EarthArmy;
+class GameRules;
 class AlienArmy
 {
 		private:
@@ -25,6 +27,7 @@ class AlienArmy
 			void AM_PrintID();
 			int getTotalCount();
 			void print();
+			void Attack(GameRules* game,EarthArmy* earth);
 
 			LinkedQueue<AlienSoldier*>& getAS_List();
 			Deque<AlienDrone*>& getAD_List();

@@ -6,6 +6,8 @@
 #include "ArmyUnits/Earth/EarthSoldier.h"
 #include "ArmyUnits/Earth/EarthTank.h"
 #include "ArmyUnits/Earth/EarthGunnery.h"
+class AlienArmy;
+class GameRules;
 class EarthArmy {
 private:
 	LinkedQueue<EarthSoldier*> ES_List;
@@ -16,7 +18,6 @@ public:
 	bool AddUnit(EarthSoldier* unit);
 	bool AddUnit(EarthTank* unit);
 	bool AddUnit(EarthGunnery* unit);
-	//void Attack(AlienArmy* alien);
 	int ES_Count();
 	void ES_PrintID();
 	int ET_Count();
@@ -25,6 +26,7 @@ public:
 	void EG_PrintID();
 	int getTotalCount();
 	void print();
+	void Attack(GameRules* game,AlienArmy* alien);
 
 	LinkedQueue<EarthSoldier*>& getES_List();
 	ArrayStack<EarthTank*>& getET_List();

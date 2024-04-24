@@ -1,5 +1,6 @@
-﻿  ArmyUnit.cpp
-  EarthGunnery.cpp
+﻿  AlienArmy.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(23,16): warning C4101: 'alienmonster': unreferenced local variable
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(22,14): warning C4101: 'aliendrone': unreferenced local variable
   main.cpp
   Generating Code...
   CMPS103-Alien-Invasion.vcxproj -> C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
