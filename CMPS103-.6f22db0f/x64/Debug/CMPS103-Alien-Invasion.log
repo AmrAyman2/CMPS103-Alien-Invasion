@@ -1,0 +1,22 @@
+﻿  AlienArmy.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\AlienArmy.cpp(23,16): warning C4101: 'alienmonster': unreferenced local variable
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\AlienArmy.cpp(22,14): warning C4101: 'aliendrone': unreferenced local variable
+  AlienDrone.cpp
+  AlienMonster.cpp
+  AlienSoldier.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  ArmyUnit.cpp
+  EarthGunnery.cpp
+  EarthSoldier.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  EarthTank.cpp
+  EarthArmy.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\EarthArmy.cpp(139,13): warning C4101: 'earthtank': unreferenced local variable
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\EarthArmy.cpp(138,16): warning C4101: 'earthgunnery': unreferenced local variable
+  GameRules.cpp
+  Generator.cpp
+C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\Generator.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Input.cpp
+  main.cpp
+  Generating Code...
+  CMPS103-Alien-Invasion.vcxproj -> C:\Users\Abd El-Rahman Hayder\source\repos\AmrAyman2\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
