@@ -3,11 +3,7 @@
 #include "ADS/priQueue.h"
 using namespace std;
 
-GameRules::GameRules(EarthArmy& e, AlienArmy& a, Input& i) {
-	*myEarth = e;
-	*myAlien = a;
-	*myI = i;
-}
+GameRules::GameRules() {}
 
 int GameRules::getDeadCount()
 {
@@ -39,6 +35,10 @@ void GameRules::printDeadList() {
 	cout << "]" << endl;
 }
 void GameRules::War() {
+	EarthArmy Earth;  AlienArmy Alien;  Input I;
+	EarthArmy* myEarth = &Earth;
+	AlienArmy* myAlien = &Alien;
+	Input* myI = &I;
 	Generator myGen(myI, myEarth, myAlien, this);
 	while (timeStep <= 40)
 	{

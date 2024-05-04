@@ -18,7 +18,7 @@ private:
 	LinkedQueue<ArmyUnit*> killedlist;
 
 public:
-	GameRules(EarthArmy& myEarth,AlienArmy& myAlien, Input&);
+	GameRules();
 	void War();
 	int gettimeStep();
 	LinkedQueue<ArmyUnit*>& getkilledlist();

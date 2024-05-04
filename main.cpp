@@ -4,6 +4,9 @@ using namespace std;
 int main()
 {
 	
+	GameRules G;
+	G.War();
+	
 	return 0;
 }
 
