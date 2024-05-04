@@ -147,6 +147,7 @@
     <ClInclude Include="EarthArmy.h" />
     <ClInclude Include="GameRules.h" />
     <ClInclude Include="Generator.h" />
+    <ClInclude Include="ArmyUnits\Earth\Healer.h" />
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,7 @@
     <ClCompile Include="EarthArmy.cpp" />
     <ClCompile Include="GameRules.cpp" />
     <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\Healer.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
