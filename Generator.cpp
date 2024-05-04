@@ -2,11 +2,11 @@
 #include"GameRules.h"
 using namespace std;
 
-Generator::Generator(Input& i1,EarthArmy& e1, AlienArmy& a1, GameRules& g1) {
-	I1 = &i1;
-	E1 = &e1;
-	A1 = &a1;
-	G1 = &g1;
+Generator::Generator(Input* i1,EarthArmy* e1, AlienArmy* a1, GameRules* g1) {
+	I1 = i1;
+	E1 = e1;
+	A1 = a1;
+	G1 = g1;
 	srand(time(0));
 }
 
@@ -26,6 +26,7 @@ void Generator::generateEarth() {
 				attackcap=(rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthSoldier* newSoldier = new EarthSoldier(id, "Earth Soldier", jointime, hp, power, attackcap);
+				newSoldier->setjoinHealth(hp);
 				E1->AddUnit(newSoldier);
 			}
 			else if (B > I1->getES() && B < (I1->getES() + I1->getET()))
@@ -36,9 +37,10 @@ void Generator::generateEarth() {
 				attackcap=(rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthTank* newTank= new EarthTank(id, "Earth Tank", jointime, hp, power, attackcap);
+				newTank->setjoinHealth(hp);
 				E1->AddUnit(newTank);
 			}
-			else
+			else if(B > (I1->getES() + I1->getET()) && B < (I1->getES() + I1->getET() + I1->getEG()))
 			{
 				jointime=(G1->gettimeStep());
 				id=nextEarthid;
@@ -47,6 +49,16 @@ void Generator::generateEarth() {
 				power=(rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
 				EarthGunnery* newGunnery = new EarthGunnery(id, "Earth Gunnery", jointime, hp, power, attackcap);
 				E1->AddUnit(newGunnery);
+			}
+			else if (B > (I1->getES() + I1->getET() + I1->getEG()))
+			{
+				jointime = (G1->gettimeStep());
+				id = nextEarthid;
+				hp = (rand() % (I1->geteHealth_upper() - I1->geteHealth_lower() + 1) + I1->geteHealth_lower());
+				attackcap = (rand() % (I1->geteAttack_upper() - I1->geteAttack_lower() + 1) + I1->geteAttack_lower());
+				power = (rand() % (I1->getePower_upper() - I1->getePower_lower() + 1) + I1->getePower_lower());
+				Healer* Genie = new Healer(id, "Healer", jointime, hp, power, attackcap);
+				E1->AddUnit(Genie);
 			}
 		}
 	}

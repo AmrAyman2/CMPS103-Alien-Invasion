@@ -1,6 +1,7 @@
 #include "EarthArmy.h"
 #include "AlienArmy.h"
 #include "GameRules.h"
+class Healer;
 
 bool EarthArmy::AddUnit(EarthSoldier* unit)
 {
@@ -16,6 +17,10 @@ bool EarthArmy::AddUnit(EarthGunnery* unit)
 {
 	int highestcombo = (*unit->getHealth() * unit->getPower()); //highest product of health and power of unit is best
 	return EG_List.enqueue(unit, highestcombo);
+}
+
+bool EarthArmy::AddUnit(Healer* unit) {
+	return HU_List.push(unit);
 }
 
 int EarthArmy::ES_Count()
@@ -137,6 +142,8 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 	EarthSoldier* earthsold;
 	EarthGunnery* earthgunnery;
 	EarthTank* earthtank;
+	Healer* Alaadin;
+	int pri;
 	for (int i = 0; i < ES_Count(); i++) {
 		ES_List.dequeue(earthsold);
 		earthsold->Attack(game,alien);
@@ -152,6 +159,15 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 		earthtank->Attack(game, alien);
 		ET_List.push(earthtank);
 	}*/
+	if (!HU_List.isEmpty())
+	{
+		HU_List.pop(Alaadin);
+		Alaadin->attack(UML, game, this);
+		Alaadin->setTD(game->gettimeStep());
+		Alaadin->setDb(game->gettimeStep() - Alaadin->getJoinTime());
+	    game->getkilledlist().enqueue( Alaadin);
+	}
+
 }
 
 LinkedQueue<EarthSoldier*>& EarthArmy::getES_List()
@@ -167,4 +183,9 @@ ArrayStack<EarthTank*>& EarthArmy::getET_List()
 priQueue<EarthGunnery*>& EarthArmy::getEG_List()
 {
 	return EG_List;
+}
+
+priQueue<ArmyUnit*>& EarthArmy::getUML()
+{
+	return UML;
 }

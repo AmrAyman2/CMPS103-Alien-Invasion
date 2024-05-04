@@ -3,8 +3,7 @@
 using namespace std;
 int main()
 {
-	GameRules G1;
-	G1.test();
+	
 	return 0;
 }
 

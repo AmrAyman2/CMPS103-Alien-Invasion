@@ -6,7 +6,7 @@ class Input
 		int N;
 		//Number of army units to generate each time step
 
-		int ES, ET, EG;
+		int ES, ET, EG, HU;
 		//Percentages for Earth units
 		int AS, AM, AD;
 		//Percentages for Alien unis
@@ -35,7 +35,7 @@ class Input
 
 		int getN();
 
-		int getES(); int getET(); int getEG();
+		int getES(); int getET(); int getEG(); int getHU();
 		int getAS(); int getAM(); int getAD();
 
 		int getProb();

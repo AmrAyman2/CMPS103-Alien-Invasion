@@ -3,6 +3,7 @@
 #include"EarthArmy.h"
 #include"AlienArmy.h"
 class GameRules;
+class Healer;
 
 class Generator
 {
@@ -15,7 +16,7 @@ private:
 	int nextEarthid = 1;
 public:
 	Generator();
-	Generator(Input&, EarthArmy&, AlienArmy&, GameRules&);
+	Generator(Input*, EarthArmy*, AlienArmy*, GameRules*);
 	void generateEarth();
 	void generateAlien();
 

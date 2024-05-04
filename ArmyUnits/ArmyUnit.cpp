@@ -27,6 +27,16 @@ int ArmyUnit::getPower() const {
 int ArmyUnit::getAttackCapacity() const {
     return attackCapacity;
 }
+
+int ArmyUnit:: getUML_joinTime() {
+    return UML_joinTime;
+}
+int ArmyUnit::getjoinHealth() {
+    return joinHealth;
+}
+
+
+////////////////////////////////////////////SETTERS//////////////////////////////////////////////////
 void ArmyUnit::setID(int id) {
     ID = id;
 }
@@ -60,6 +70,13 @@ void ArmyUnit::setDF(int df) {
 void ArmyUnit::setDd(int dd) {
     Dd = dd;
 }
-void ArmyUnit::setBt(int bt) {
-    Bt = bt;
+void ArmyUnit::setDb(int bt) {
+    Db = bt;
+}
+
+void ArmyUnit::setUML_joinTime(int uml) {
+    UML_joinTime = uml;
+}
+void ArmyUnit::setjoinHealth(int h) {
+    joinHealth = h;
 }

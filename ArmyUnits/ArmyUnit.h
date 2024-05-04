@@ -15,8 +15,10 @@ class ArmyUnit {
         int Td; //Destruction Time
         int Df; //first attack delay
         int Dd; //Destruction delay
-        int Bt; //batle time
+        int Db; //batle time
         int troopCount=0; //needed for IDs in random generator
+        int UML_joinTime;
+        int joinHealth;
 
     public:
         // Constructor
@@ -30,6 +32,8 @@ class ArmyUnit {
         int getPower() const;
         int getAttackCapacity() const;
         int getTroopCount();//used in setting ID in generator, counts the number of troops created from each type
+        int getUML_joinTime();
+        int getjoinHealth();
 
         //====================Setters====================//
         void setID(int);
@@ -41,7 +45,8 @@ class ArmyUnit {
         void setTD(int);
         void setDF(int);
         void setDd(int);
-        void setBt(int);
-    
+        void setDb(int);
+        void setUML_joinTime(int);
+        void setjoinHealth(int);
         void printID();
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include "priNode.h"
-
+#include"../ArmyUnits/Earth/EarthSoldier.h"
+#include"../ArmyUnits/Earth/EarthTank.h"
 
 //This class impelements the priority queue as a sorted list (Linked List)
 //The item with highest priority is at the front of the queue
@@ -61,5 +62,37 @@ public:
 
     bool isEmpty() const {
         return head == nullptr;
+    }
+
+    bool enqueue_UML(const T data, int priority) {
+        priNode<T>* newNode = new priNode<T>(data, priority);
+        if (isEmpty() || (priority < head->getPri() && typeid(newNode)==typeid(EarthSoldier*)))
+        {
+            newNode->setNext(head);
+            head = newNode;
+            return true;
+        }
+
+        priNode<T>* current = head;
+        if (typeid(newNode)==typeid(EarthSoldier*))
+        {
+            while (current->getNext() && priority >= current->getNext()->getPri() && typeid(current->getNext())==typeid(EarthSoldier*))
+            {
+                current = current->getNext();
+            }
+            newNode->setNext(current->getNext());
+            current->setNext(newNode);
+            return true;
+        }
+        else if (typeid(newNode) == typeid(EarthTank*))
+        {
+            while (current->getNext())
+            {
+                current = current->getNext();
+            }
+            newNode->setNext(current->getNext());
+            current->setNext(newNode);
+            return true;
+        }
     }
 };

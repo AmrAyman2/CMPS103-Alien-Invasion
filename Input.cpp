@@ -7,7 +7,7 @@ using namespace std;
 Input::Input() {
 	fstream infile;
 	infile.open("scores.txt");
-	infile >> N >> ES >> ET >> EG >> AS >> AM >> AD >> Prob >> eHealth_lower;
+	infile >> N >> ES >> ET >> EG >> HU>> AS >> AM >> AD >> Prob >> eHealth_lower;
 	infile.ignore(1);
 	infile >> eHealth_upper >> ePower_lower;
 	infile.ignore(1);
@@ -37,6 +37,10 @@ int Input::getET() {
 
 int Input::getEG() {
 	return EG;
+}
+
+int Input::getHU(){
+	return HU;
 }
 
 int Input::getAS() {
