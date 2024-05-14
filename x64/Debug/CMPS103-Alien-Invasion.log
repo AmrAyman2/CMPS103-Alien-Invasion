@@ -1,4 +1,6 @@
-﻿  EarthArmy.cpp
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(128,6): warning C4101: 'pri': unreferenced local variable
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(125,16): warning C4101: 'earthgunnery': unreferenced local variable
+﻿  AlienSoldier.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  EarthSoldier.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
   CMPS103-Alien-Invasion.vcxproj -> C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe

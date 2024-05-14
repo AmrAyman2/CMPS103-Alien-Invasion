@@ -82,7 +82,7 @@ int EarthArmy::EG_Count()
 
 void EarthArmy::EG_PrintID()
 {
-	cout << ET_Count() << " Earth Gunneries " << endl;
+	cout << EG_Count() << " Earth Gunneries " << endl;
 	getEG_List().print();
 }
 

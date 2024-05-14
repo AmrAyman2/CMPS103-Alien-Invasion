@@ -12,6 +12,7 @@ void AlienSoldier::Attack(GameRules* game,EarthArmy* army)
 	while (army->getES_List().dequeue(unitattacked) && count < attackCapacity) {
 		int* unitattackedhp = unitattacked->getHealth();
 		*unitattackedhp -= (power * health / 100) / sqrt(*unitattackedhp);
+		cout << "Alien Soldier with ID " << ID << " is attacking Earth Soldier with ID " << unitattacked->getID() << endl;
 		if (*unitattackedhp <= 0) {
 			game->getkilledlist().enqueue(unitattacked);
 			unitattacked->setTD(game->gettimeStep());
