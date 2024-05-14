@@ -137,6 +137,7 @@
     <ClInclude Include="ADS\QueueADT.h" />
     <ClInclude Include="ADS\StackADT.h" />
     <ClInclude Include="AlienArmy.h" />
+    <ClInclude Include="AllyArmy.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienDrone.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienMonster.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienSoldier.h" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlienArmy.cpp" />
+    <ClCompile Include="AllyArmy.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />

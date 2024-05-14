@@ -24,6 +24,7 @@
     <ClInclude Include="ADS\Deque.h" />
     <ClInclude Include="ArmyUnits\Earth\Healer.h" />
     <ClInclude Include="ArmyUnits\Earth\Saver.h" />
+    <ClInclude Include="AllyArmy.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArmyUnits\ArmyUnit.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="AlienArmy.cpp" />
     <ClCompile Include="ArmyUnits\Earth\Healer.cpp" />
     <ClCompile Include="ArmyUnits\Earth\Saver.cpp" />
+    <ClCompile Include="AllyArmy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

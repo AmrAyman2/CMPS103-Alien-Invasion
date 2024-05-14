@@ -7,10 +7,11 @@
 #include "ArmyUnits/Earth/EarthTank.h"
 #include "ArmyUnits/Earth/EarthGunnery.h"
 #include"GameRules.h"
-class Healer;
 #include"ArmyUnits/Earth/Healer.h"
+
 //forward declaration then including when trying to include to files in each other
 
+class Healer;
 class AlienArmy;
 class GameRules;
 class EarthArmy {

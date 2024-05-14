@@ -26,4 +26,5 @@ public:
 	//void test();
 	void printDeadList();
 	int getdeadlistcount();
+	Input& getInput();
 };
