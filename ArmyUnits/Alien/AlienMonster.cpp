@@ -24,7 +24,6 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 			{
 				army->getET_List().pop(unitattacked_T);
 				int* Tank_Hp = unitattacked_T->getHealth();
-				cout << "AM: [" << this->getID() << "] shoots ET: [" << unitattacked_T->getID() << "]" << "\n\n";
 				*Tank_Hp -= (power * health / 100) / sqrt(*Tank_Hp);
 				if (*unitattacked_T->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_T);
@@ -36,7 +35,6 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 			{
 				army->getES_List().dequeue(unitattacked_S);
 				int* Sold_Hp = unitattacked_S->getHealth();
-				cout << "AM: [" << this->getID() << "] shoots ES: [" << unitattacked_S->getID() << "]" << "\n\n";
 				*Sold_Hp -= (power * health / 100) / sqrt(*Sold_Hp);
 				if (*unitattacked_S->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_S);
@@ -51,7 +49,6 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 				//Attacking Earth Tank
 				army->getET_List().pop(unitattacked_T);
 				int* Tank_Hp = unitattacked_T->getHealth();
-				cout << "AM: [" << this->getID() << "] shoots ET: [" << unitattacked_T->getID() << "]" << "\n\n";
 				*Tank_Hp -= (power * health / 100) / sqrt(*Tank_Hp);
 				if (*unitattacked_T->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_T);
@@ -63,7 +60,6 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 				//Attacking Earth Soldier
 				army->getES_List().dequeue(unitattacked_S);
 				int* Sold_Hp = unitattacked_S->getHealth();
-				cout << "AM: [" << this->getID() << "] shoots ES: [" << unitattacked_S->getID() << "]" << "\n\n";
 				*Sold_Hp -= (power * health / 100) / sqrt(*Sold_Hp);
 				if (*unitattacked_S->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_S);

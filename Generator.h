@@ -2,7 +2,6 @@
 #include"Input.h"
 #include"EarthArmy.h"
 #include"AlienArmy.h"
-#include"AllyArmy.h"
 class GameRules;
 class Healer;
 
@@ -20,7 +19,6 @@ public:
 	Generator(Input*, EarthArmy*, AlienArmy*, GameRules*);
 	void generateEarth();
 	void generateAlien();
-	void generateAlly();
 
 };
 

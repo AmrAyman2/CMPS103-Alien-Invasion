@@ -26,9 +26,9 @@ void AlienArmy::Attack(GameRules* game,EarthArmy* earth)
 		aliensold->Attack(game, earth);
 		AS_List.enqueue(aliensold);
 	}
-	for (int i = 0; i < AD_Count(); i++) {
+	/*for (int i = 0; i < AD_Count(); i++) {
 		AD_List.dequeue(aliendrone);
-		aliendrone->Attack(game, this, earth);
+		aliendrone->Attack(game, earth);
 		AD_List.enqueue(aliendrone);
 	}*/
 	for (int i = 0; i < AM_Count(); i++) {
