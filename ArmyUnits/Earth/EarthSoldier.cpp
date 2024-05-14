@@ -23,3 +23,16 @@ void EarthSoldier::Attack(GameRules* game, AlienArmy* army)
 		count++;
 	}
 }
+
+bool EarthSoldier::isInfected() {
+	return infected;
+}
+bool EarthSoldier::isImmuned() {
+	return immuned;
+}
+void EarthSoldier::setInfected(bool b) {
+	infected = b;
+}
+void EarthSoldier::setImmuned(bool b) {
+	immuned = b;
+}

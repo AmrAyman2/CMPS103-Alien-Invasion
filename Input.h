@@ -27,6 +27,7 @@ class Input
 		//ranges for power of alien army units
 		int aAttack_lower, aAttack_upper;
 		//ranges for attack_capacity of alien army units
+		int virus_prob;
 
 	public:
 
@@ -47,4 +48,5 @@ class Input
 		int getaHealth_lower(); int getaHealth_upper();
 		int getaPower_lower(); int getaPower_upper();
 		int getaAttack_lower(); int getaAttack_upper();
+		int getVirus_prob();
 };

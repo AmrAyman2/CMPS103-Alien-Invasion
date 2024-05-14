@@ -7,11 +7,15 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 {
 	// Alien Monster should attack both ET & ES, if they both exist
 	// If one does not exist it attacks other
+	// generate random number
+
+	
 
 	ArrayStack<EarthTank*> tempTank;
 	EarthTank* unitattacked_T;
 	EarthSoldier* unitattacked_S;
 	if (army->getET_List().isEmpty() && army->getES_List().isEmpty()) return; // check first, if there is no ET & ES that exist THEN no need to enter loop
+	
 	for (int i = 0; i < attackCapacity; i++)
 	{
 		if (army->getET_List().isEmpty() || army->getES_List().isEmpty())
@@ -90,4 +94,21 @@ ostream& operator<<(ostream& os, const AlienMonster monster)
 {
 	os << monster.getID();
 	return os;
+}
+
+void AlienMonster::poison( EarthArmy* army) {
+		// Alien Monster poison should attack ES, if it exists exist
+		// generate random number
+		EarthSoldier* unitattacked_S;
+		if (army->getES_List().isEmpty()) return; // check first, if there is no ES that exist THEN no need to enter loop
+
+		for (int i = 0; i < attackCapacity; i++)
+		{
+			if (!army->getES_List().isEmpty()) //Attacking Earth Soldier
+			{
+				army->getES_List().dequeue(unitattacked_S);
+				unitattacked_S->setInfected(true);
+				army->getES_List().enqueue(unitattacked_S);
+			}
+		}
 }

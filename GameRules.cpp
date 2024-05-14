@@ -47,6 +47,8 @@ void GameRules::War() {
 		printDeadList();
 		timeStep++;
 	}
+
+	
 	//if (timeStep > 100)
 	//{
 	//	while (timeStep < 100)
@@ -86,6 +88,10 @@ int GameRules::gettimeStep() {
 LinkedQueue<ArmyUnit*>& GameRules::getkilledlist()
 {
 	return killedlist;
+}
+
+Input& GameRules::getInput() {
+	return *myI;
 }
 
 //void GameRules::test() 

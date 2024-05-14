@@ -19,7 +19,7 @@ Input::Input() {
 	infile.ignore(1);
 	infile >> aPower_upper >> aAttack_lower;
 	infile.ignore(1);
-	infile >> aAttack_upper;
+	infile >> aAttack_upper>> virus_prob;
 	infile.close();
 }
 
@@ -105,4 +105,8 @@ int Input::getaAttack_lower() {
 
 int Input::getaAttack_upper() {
 	return aAttack_upper;
+}
+
+int Input::getVirus_prob() {
+	return virus_prob;
 }

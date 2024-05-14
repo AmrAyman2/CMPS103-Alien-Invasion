@@ -30,12 +30,22 @@ void AlienArmy::Attack(GameRules* game,EarthArmy* earth)
 		AD_List.dequeue(aliendrone);
 		aliendrone->Attack(game, earth);
 		AD_List.enqueue(aliendrone);
-	}
-	for (int i = 0; i < AM_Count(); i++) {
-		AM_List.pop(alienmonster);
-		alienmonster->Attack(game, earth);
-		AM_List.add(alienmonster);
 	}*/
+	for (int i = 0; i < AM_Count(); i++) {
+		int mode = rand() % (100) + 1;
+		if (mode > game->getInput().getVirus_prob())
+		{
+			AM_List.pop(alienmonster);
+			alienmonster->Attack(game, earth);
+			AM_List.add(alienmonster);
+		}
+		else
+		{
+			AM_List.pop(alienmonster);
+			alienmonster->poison(earth);
+			AM_List.add(alienmonster);
+		}
+	}
 }
 
 int AlienArmy::AS_Count()

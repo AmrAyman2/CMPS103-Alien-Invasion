@@ -118,9 +118,14 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 	}
 	*/
 	for (int i = 0; i < ET_Count(); i++) {
-		ET_List.pop(earthtank);
-		earthtank->Attack(game, alien, this);
-		ET_List.push(earthtank);
+		int mode = rand() % (100) + 1;
+		if (mode > game->getInput().getVirus_prob())
+		{
+			ET_List.pop(earthtank);
+			earthtank->Attack(game, alien, this);
+			ET_List.push(earthtank);
+		}
+		
 	}
 	if (!HU_List.isEmpty())
 	{
