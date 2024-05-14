@@ -54,7 +54,7 @@ void GameRules::War() {
 	}
 	if (timeStep > 40)
 	{
-		while (!Victory)
+		while (timeStep<=501)
 		{
 			myGen.generateEarth();
 			myGen.generateAlien();
