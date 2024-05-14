@@ -149,6 +149,7 @@
     <ClInclude Include="Generator.h" />
     <ClInclude Include="ArmyUnits\Earth\Healer.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="ArmyUnits\Earth\Saver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlienArmy.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="ArmyUnits\Earth\Healer.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\Saver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

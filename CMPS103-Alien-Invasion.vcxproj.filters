@@ -23,6 +23,7 @@
     <ClInclude Include="ADS\ArrayBag.h" />
     <ClInclude Include="ADS\Deque.h" />
     <ClInclude Include="ArmyUnits\Earth\Healer.h" />
+    <ClInclude Include="ArmyUnits\Earth\Saver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArmyUnits\ArmyUnit.cpp" />
@@ -39,6 +40,7 @@
     <ClCompile Include="EarthArmy.cpp" />
     <ClCompile Include="AlienArmy.cpp" />
     <ClCompile Include="ArmyUnits\Earth\Healer.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\Saver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
