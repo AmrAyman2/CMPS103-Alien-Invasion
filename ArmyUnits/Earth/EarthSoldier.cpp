@@ -16,8 +16,6 @@ void EarthSoldier::Attack(GameRules* game, AlienArmy* army)
 			game->getkilledlist().enqueue(unitattacked);
 			unitattacked->setTD(game->gettimeStep());
 		}
-		else if (*unitattackedhp > 0 && *unitattackedhp < (0.2 * unitattacked->getjoinHealth()));
-		
 		else
 			army->getAS_List().enqueue(unitattacked);
 		count++;

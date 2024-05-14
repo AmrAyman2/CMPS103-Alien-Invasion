@@ -86,8 +86,3 @@ void AlienMonster::Attack(GameRules* game, EarthArmy* army)
 	}
 }*/
 
-ostream& operator<<(ostream& os, const AlienMonster monster)
-{
-	os << monster.getID();
-	return os;
-}

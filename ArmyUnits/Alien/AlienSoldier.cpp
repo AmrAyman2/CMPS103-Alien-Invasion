@@ -16,15 +16,8 @@ void AlienSoldier::Attack(GameRules* game,EarthArmy* army)
 			game->getkilledlist().enqueue(unitattacked);
 			unitattacked->setTD(game->gettimeStep());
 		}
-		else if (*unitattackedhp > 0 && *unitattackedhp < (0.2 * unitattacked->getjoinHealth()));
-
 		else
 			army->getES_List().enqueue(unitattacked);
 		count++;
 	}
-}
-ostream& operator<<(ostream& os, const AlienSoldier soldier)
-{
-	os << soldier.getID();
-	return os;
 }

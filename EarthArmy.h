@@ -32,6 +32,8 @@ public:
 	void ET_PrintID();
 	int EG_Count();
 	void EG_PrintID();
+	int HU_Count();
+	void HU_PrintID();
 	int getTotalCount();
 	void print();
 	void Attack(GameRules* game,AlienArmy* alien);
@@ -39,5 +41,6 @@ public:
 	LinkedQueue<EarthSoldier*>& getES_List();
 	ArrayStack<EarthTank*>& getET_List();
 	priQueue<EarthGunnery*>& getEG_List();
+	ArrayStack<Healer*>& getHU_List();
 	priQueue<ArmyUnit*>& getUML();
 };
