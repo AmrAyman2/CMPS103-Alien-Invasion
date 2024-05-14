@@ -105,12 +105,18 @@ class ArrayBag
 			return frequency;
 		}
 		void print() {
+			ArrayBag<ItemType> temp = *this; 
+			ItemType tempnode;
 			cout << "[";
-			for (int i = 0; i < itemCount; i++) {
-				if (isEmpty())
-					cout << items[i] << "]" << endl;
+			while (!temp.isEmpty()) {
+				temp.pop(tempnode);
+				if (temp.isEmpty()) {
+					cout << *tempnode << "]" << endl;
+					return;
+				}
 				else
-					cout << items[i] << ",";
+					cout << *tempnode << ", ";
 			}
+			cout << "] ";
 		}
 };

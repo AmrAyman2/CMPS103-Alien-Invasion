@@ -38,18 +38,9 @@ int EarthArmy::ES_Count()
 void EarthArmy::ES_PrintID()
 {
 	LinkedQueue<EarthSoldier*> temp(ES_List);
-	EarthSoldier* temppointer;
-	cout << ES_Count() << " ES " << "[";
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer);
-		if (temp.isEmpty()) {
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
-	}
-	cout << "]" << endl;
+	int count=ES_Count();
+	cout << count << " Earth Soldiers" << endl;
+	temp.print();
 }
 
 int EarthArmy::ET_Count()
@@ -67,19 +58,8 @@ int EarthArmy::ET_Count()
 void EarthArmy::ET_PrintID()
 {
 	ArrayStack<EarthTank*> temp(ET_List);
-	EarthTank* temppointer;
-	cout << ET_Count() << " ET " << "[";
-	while (!temp.isEmpty()) {
-		temp.pop(temppointer);
-		if (temp.isEmpty())
-		{
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
-	}
-	cout << "]" << endl;
+	cout << ET_Count() << " Earth Tanks " << endl;
+	temp.print();
 }
 
 int EarthArmy::EG_Count()
@@ -102,26 +82,8 @@ int EarthArmy::EG_Count()
 
 void EarthArmy::EG_PrintID()
 {
-	priQueue<EarthGunnery*> temp;
-	EarthGunnery* temppointer;
-	int trash = 0;
-	cout << EG_Count() << " EG " << "[";
-	while (!EG_List.isEmpty()) {
-		EG_List.dequeue(temppointer, trash);
-		temp.enqueue(temppointer, trash);
-		if (EG_List.isEmpty())
-		{
-			cout << temppointer->getID() << "]" << endl;
-			while (!temp.isEmpty()) {
-				temp.dequeue(temppointer, trash);
-				EG_List.enqueue(temppointer, trash);
-			}
-			return;
-		}
-		else
-		cout<<temppointer->getID()<<", ";
-	}
-	cout << "]" << endl;
+	cout << ET_Count() << " Earth Gunneries " << endl;
+	getEG_List().print();
 }
 
 int EarthArmy::getTotalCount()
@@ -154,11 +116,12 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 		earthgunnery->Attack(game, alien);
 		EG_List.enqueue(earthgunnery);
 	}
+	*/
 	for (int i = 0; i < ET_Count(); i++) {
 		ET_List.pop(earthtank);
-		earthtank->Attack(game, alien);
+		earthtank->Attack(game, alien, this);
 		ET_List.push(earthtank);
-	}*/
+	}
 	if (!HU_List.isEmpty())
 	{
 		HU_List.pop(Alaadin);

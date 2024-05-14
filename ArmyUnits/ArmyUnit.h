@@ -50,3 +50,4 @@ class ArmyUnit {
         void setjoinHealth(int);
         void printID();
 };
+ostream& operator<<(ostream& os, const ArmyUnit unit);

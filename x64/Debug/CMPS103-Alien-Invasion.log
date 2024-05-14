@@ -1,27 +1,30 @@
 ﻿  AlienArmy.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(23,16): warning C4101: 'alienmonster': unreferenced local variable
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(22,14): warning C4101: 'aliendrone': unreferenced local variable
-  AlienDrone.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(88,16): warning C4101: 'temppointer': unreferenced local variable
   AlienMonster.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(23,40): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(34,40): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(48,40): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienMonster.cpp(59,40): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
   AlienSoldier.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Alien\AlienSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-  ArmyUnit.cpp
-  EarthGunnery.cpp
   EarthSoldier.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthSoldier.cpp(14,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
   EarthTank.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(25,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(37,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(51,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(65,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  Healer.cpp
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\Healer.cpp(20,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   EarthArmy.cpp
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(144,13): warning C4101: 'earthtank': unreferenced local variable
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(146,6): warning C4101: 'pri': unreferenced local variable
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(143,16): warning C4101: 'earthgunnery': unreferenced local variable
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(108,6): warning C4101: 'pri': unreferenced local variable
+C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\EarthArmy.cpp(105,16): warning C4101: 'earthgunnery': unreferenced local variable
   GameRules.cpp
   Generator.cpp
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\Generator.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Healer.cpp
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\Healer.cpp(20,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Input.cpp
   main.cpp
   Generating Code...
 C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\ADS\priQueue.h(97): warning C4715: 'priQueue<ArmyUnit *>::enqueue_UML': not all control paths return a value
-  LINK : C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe not found or not built by the last incremental link; performing full link
   CMPS103-Alien-Invasion.vcxproj -> C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe

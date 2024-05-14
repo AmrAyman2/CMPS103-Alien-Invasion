@@ -23,6 +23,6 @@ public:
 	int gettimeStep();
 	LinkedQueue<ArmyUnit*>& getkilledlist();
 	//void test();
-	int getDeadCount();
 	void printDeadList();
+	int getdeadlistcount();
 };

@@ -15,4 +15,3 @@ public:
     void attack(priQueue<ArmyUnit*>&, GameRules*, EarthArmy*);
 
 };
-

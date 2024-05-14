@@ -57,6 +57,21 @@ public:
 		return true;
 	}  // end peek
 
+	void print() {
+		ArrayStack<T> temp = *this;
+		T tempnode;
+		cout << "[";
+		while (!temp.isEmpty()) {
+			temp.pop(tempnode);
+			if (temp.isEmpty()) {
+				cout << *tempnode << "]" << endl;
+				return;
+			}
+			else
+				cout << *tempnode << ", ";
+		}
+		cout << "] ";
+	}
 }; // end ArrayStack
 
 #endif

@@ -95,4 +95,26 @@ public:
             return true;
         }
     }
+    void print() {
+        priQueue<T> temp;
+        T tempnode;
+        int trash = 0;
+        cout << "[";
+        while (!this->isEmpty()) {
+            this->dequeue(tempnode, trash);
+            temp.enqueue(tempnode, trash);
+            if (this->isEmpty())
+            {
+                cout << *tempnode << "]" << endl;
+                while (!temp.isEmpty()) {
+                    temp.dequeue(tempnode, trash);
+                    this->enqueue(tempnode, trash);
+                }
+                return;
+            }
+            else
+                cout << *tempnode << ", ";
+        }
+        cout << "]" << endl;
+    }
 };

@@ -80,3 +80,8 @@ void ArmyUnit::setUML_joinTime(int uml) {
 void ArmyUnit::setjoinHealth(int h) {
     joinHealth = h;
 }
+ostream& operator<<(ostream& os, const ArmyUnit unit)
+{
+    os << unit.getID();
+    return os;
+}

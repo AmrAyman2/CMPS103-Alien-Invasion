@@ -17,3 +17,8 @@ AlienDrone::AlienDrone(int id, const string& unitType, int jointime, int hp, int
 //		count++;
 //	}
 //} 
+ostream& operator<<(ostream& os, const AlienDrone drone)
+{
+	os << drone.getID();
+	return os;
+}

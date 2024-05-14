@@ -53,19 +53,9 @@ int AlienArmy::AS_Count()
 void AlienArmy::AS_PrintID()
 {
 	LinkedQueue<AlienSoldier*> temp(AS_List);
-	AlienSoldier* temppointer;
-	cout << AS_Count() << " AS " << "[";
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer);
-		if (temp.isEmpty())
-		{
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
-	}
-	cout << "]" << endl;
+	int count = AS_Count();
+	cout << count << " Alien Soldiers" << endl;
+	temp.print();
 }
 
 int AlienArmy::AD_Count()
@@ -83,19 +73,8 @@ int AlienArmy::AD_Count()
 void AlienArmy::AD_PrintID()
 {
 	Deque<AlienDrone*> temp(AD_List);
-	AlienDrone* temppointer;
-	cout << AD_Count() << " AD " << "[";
-
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer);
-		if (temp.isEmpty()) {
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
-	}
-	cout << "]" << endl;
+	cout << AD_Count() << " Alien Drones " << endl;
+	temp.print();
 }
 
 int AlienArmy::AM_Count()
@@ -107,17 +86,8 @@ void AlienArmy::AM_PrintID()
 {
 	ArrayBag<AlienMonster*> temp(AM_List);
 	AlienMonster* temppointer;
-	cout << AM_Count() << " AM " << "[";
-	while (!temp.isEmpty()) {
-		temp.pop(temppointer);
-		if (temp.isEmpty()) {
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
-	}
-	cout << "]" << endl;
+	cout << AM_Count() << " Alien Monsters " << endl;
+	temp.print();
 }
 
 int AlienArmy::getTotalCount()

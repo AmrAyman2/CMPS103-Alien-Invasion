@@ -4,47 +4,42 @@
 using namespace std;
 
 GameRules::GameRules(EarthArmy& e, AlienArmy& a, Input& i) {
-	*myEarth = e;
-	*myAlien = a;
-	*myI = i;
-}
-
-int GameRules::getDeadCount()
-{
-	LinkedQueue<ArmyUnit*> temp(getkilledlist());
-	int killedcount = 0;
-	ArmyUnit* temppointer;
-	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer);
-		killedcount++;
-	}
-	return killedcount;
+	//myEarth = e;
+	//*myAlien = a;
+	//*myI = i;
+	myEarth = &e;
+	myAlien = &a;
+	myI = &i;
 }
 
 void GameRules::printDeadList() {
 	cout << endl;
 	cout << "============== Killed / Destructed Units ===========" << endl;
 	LinkedQueue<ArmyUnit*> temp(getkilledlist());
-	ArmyUnit* temppointer;
-	cout << getDeadCount() << " units " << "[";				
+	int killedcount=getdeadlistcount();
+	cout << killedcount << " Dead Units" << endl;
+	temp.print();
+}
+int GameRules::getdeadlistcount()
+{
+	LinkedQueue<ArmyUnit*> temp(getkilledlist());
+	int count = 0;
+	ArmyUnit* trash;
 	while (!temp.isEmpty()) {
-		temp.dequeue(temppointer);
-		if (temp.isEmpty()) {
-			cout << temppointer->getID() << "]" << endl;
-			return;
-		}
-		else
-			cout << temppointer->getID() << ", ";
+		temp.dequeue(trash);
+		count++;
 	}
-	cout << "]" << endl;
+	return count;
 }
 void GameRules::War() {
 	Generator myGen(myI, myEarth, myAlien, this);
-	while (timeStep <= 40)
+
+	while (timeStep <= 500)
 	{
+		cout << "\n\n\t ============ Time Step " << timeStep << " =============\n\n";
 		myGen.generateEarth();
 		myGen.generateAlien();
-		//Attack Logic
+		/* ------- Attacking Logic ------- */
 		myEarth->Attack(this, myAlien);
 		myAlien->Attack(this, myEarth);
 		myEarth->print();
@@ -52,33 +47,34 @@ void GameRules::War() {
 		printDeadList();
 		timeStep++;
 	}
-	if (timeStep > 40)
-	{
-		while (!Victory)
-		{
-			myGen.generateEarth();
-			myGen.generateAlien();
-			//Attack Logic
-			myEarth->Attack(this, myAlien);
-			myAlien->Attack(this, myEarth);
-			myEarth->print();
-			myAlien->print();
-			printDeadList();
-			if (myEarth->getTotalCount() > 0 && myAlien->getTotalCount() == 0)
-			{
-				Winner = "Earth Army";
-				Victory = true;
-				cout << "Winner Winner Chicken Dinner:: Planet Earth" << endl;
-			}
-			else if (myAlien->getTotalCount() > 0 && myEarth->getTotalCount() == 0)
-			{
-				Winner = "Alien Army";
-				Victory = true;
-				cout << "Winner Winner Chicken Dinner:: Planet ET" << endl;
-			}
-			timeStep++;
-		}
-	}
+	//if (timeStep > 100)
+	//{
+	//	while (timeStep < 100)
+	//	{
+	//		cout << "\n\n\t ============ Time Step " << timeStep << " =============\n\n";
+	//		myGen.generateEarth();
+	//		myGen.generateAlien();
+	//		//Attack Logic
+	//		myEarth->Attack(this, myAlien);
+	//		myAlien->Attack(this, myEarth);
+	//		myEarth->print();
+	//		myAlien->print();
+	//		printDeadList();
+	//		if (myEarth->getTotalCount() > 0 && myAlien->getTotalCount() == 0)
+	//		{
+	//			Winner = "Earth Army";
+	//			Victory = true;
+	//			cout << "Winner Winner Chicken Dinner:: Planet Earth" << endl;
+	//		}
+	//		else if (myAlien->getTotalCount() > 0 && myEarth->getTotalCount() == 0)
+	//		{
+	//			Winner = "Alien Army";
+	//			Victory = true;
+	//			cout << "Winner Winner Chicken Dinner:: Planet ET" << endl;
+	//		}
+	//		timeStep++;
+	//	}
+	//}
 }
 
 

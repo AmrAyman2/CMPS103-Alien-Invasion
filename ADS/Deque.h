@@ -93,5 +93,21 @@ class Deque :public QueueADT<T>
 			}
 		}
 
+		void print() {
+			Deque<T> temp=*this;
+			T tempnode;
+			cout << "[";
+			while (!temp.isEmpty()) {
+				temp.dequeue(tempnode);
+				if (temp.isEmpty()) {
+					cout << *tempnode << "]" << endl;
+					return;
+				}
+				else
+					cout << *tempnode << ", ";
+			}
+			cout << "] ";
+		}
+
 		~Deque() {}
 }; //end of Deque

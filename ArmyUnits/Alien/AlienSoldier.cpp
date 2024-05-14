@@ -23,3 +23,8 @@ void AlienSoldier::Attack(GameRules* game,EarthArmy* army)
 		count++;
 	}
 }
+ostream& operator<<(ostream& os, const AlienSoldier soldier)
+{
+	os << soldier.getID();
+	return os;
+}

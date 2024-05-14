@@ -57,7 +57,8 @@ public :
 	bool isEmpty() const ;
 	bool enqueue(const T& newEntry);
 	bool dequeue(T& frntEntry);  
-	bool peek(T& frntEntry)  const;	
+	bool peek(T& frntEntry)  const;
+	void print();
 	~LinkedQueue();
 	//copy constructor
 	LinkedQueue(const LinkedQueue<T>& LQ);
@@ -166,6 +167,24 @@ bool LinkedQueue<T>:: peek(T& frntEntry) const
 
 	frntEntry = frontPtr->getItem();
 	return true;
+
+}
+template<typename T>
+void LinkedQueue<T>::print()
+{
+	LinkedQueue<T> temp = *this;
+	T tempnode;
+	cout << "[";
+	while (!temp.isEmpty()) {
+		temp.dequeue(tempnode);
+		if (temp.isEmpty()) {
+			cout << *tempnode << "] " << endl;
+			return;
+		}
+		else
+			cout << *tempnode << ", ";
+	}
+	cout << "]" << endl;
 
 }
 ///////////////////////////////////////////////////////////////////////////////////

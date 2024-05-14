@@ -8,3 +8,5 @@ class AlienSoldier : public ArmyUnit
 		AlienSoldier(int id, const string& unitType, int jointime, int hp, int pow, int attackcap);
 		void Attack(GameRules* game,EarthArmy* army);
 };
+
+ostream& operator<<(ostream& os, const AlienSoldier soldier);

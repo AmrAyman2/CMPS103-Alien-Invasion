@@ -3,7 +3,11 @@
 using namespace std;
 int main()
 {
-	
+	EarthArmy e1;
+	AlienArmy a1;
+	Input i1;
+	GameRules g1(e1, a1, i1);
+	g1.War();
 	return 0;
 }
 
