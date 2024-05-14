@@ -19,6 +19,7 @@ private:
 
 public:
 	GameRules(EarthArmy& myEarth,AlienArmy& myAlien, Input&);
+	Input& getInput();
 	void War();
 	int gettimeStep();
 	LinkedQueue<ArmyUnit*>& getkilledlist();

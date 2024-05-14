@@ -31,12 +31,11 @@ void AlienArmy::Attack(GameRules* game,EarthArmy* earth)
 		aliendrone->Attack(game, this, earth);
 		AD_List.enqueue(aliendrone);
 	}
-	/*
 	for (int i = 0; i < AM_Count(); i++) {
 		AM_List.pop(alienmonster);
 		alienmonster->Attack(game, earth);
 		AM_List.add(alienmonster);
-	}*/
+	}
 }
 
 int AlienArmy::AS_Count()

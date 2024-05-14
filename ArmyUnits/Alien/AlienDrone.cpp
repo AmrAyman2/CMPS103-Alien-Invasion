@@ -27,7 +27,7 @@ void AlienDrone::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 				int* Tank_Hp = unitattacked_T->getHealth();
 				int front_power = attacking_front->getPower();
 				int* front_health = attacking_front->getHealth();
-				cout << "\n\n Drone with ID: " << this->getID() << " shoots " << unitattacked_T->getID() << "\n\n";
+				cout << "AD: [" << this->getID() << "] shoots ET: [" << unitattacked_T->getID() <<"]" << "\n\n";
 				*Tank_Hp -= (front_power * *front_health / 100) / sqrt(*Tank_Hp);
 				if (*unitattacked_T->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_T);
@@ -39,7 +39,7 @@ void AlienDrone::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 				int* Gun_Hp = unitattacked_G->getHealth();
 				int rear_power = attacking_rear->getPower();
 				int* rear_health = attacking_rear->getHealth();
-				cout << "\n\n Drone with ID: " << this->getID() << " shoots " << unitattacked_G->getID() << "\n\n";
+				cout << "AD: [" << this->getID() << "] shoots ET: [" << unitattacked_T->getID() << "]" << "\n\n";
 				*Gun_Hp -= (front_power * *front_health / 100) / sqrt(*Gun_Hp);
 				if (*unitattacked_G->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_G);

@@ -132,11 +132,11 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 		ES_List.enqueue(earthsold);
 	}
 	/*for (int i = 0; i < EG_Count(); i++) {
-		EG_List.dequeue(earthgunnery);
+		int pri;
+		EG_List.dequeue(earthgunnery,pri);
 		earthgunnery->Attack(game, alien);
-		EG_List.enqueue(earthgunnery);
-	}
-	*/
+		EG_List.enqueue(earthgunnery,pri);
+	}*/
 	for (int i = 0; i < ET_Count(); i++) {
 		ET_List.pop(earthtank);
 		earthtank->Attack(game, alien, this);

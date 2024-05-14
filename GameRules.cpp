@@ -31,6 +31,10 @@ int GameRules::getdeadlistcount()
 	}
 	return count;
 }
+
+Input& GameRules::getInput() {
+	return *myI;
+}
 void GameRules::War() {
 	Generator myGen(myI, myEarth, myAlien, this);
 

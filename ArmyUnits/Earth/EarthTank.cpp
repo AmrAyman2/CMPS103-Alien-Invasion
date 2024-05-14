@@ -20,7 +20,7 @@ void EarthTank::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 			{
 				armyA->getAM_List().pop(unitattacked_m);
 				int* M_Hp = unitattacked_m->getHealth();
-				cout << "\n\n Tank with ID: " << this->getID() << " shoots " << unitattacked_m->getID() << "\n\n";
+				cout << "\n ET: [" << this->getID() << "] shoots AM: [" << unitattacked_m->getID() << "]" << "\n";
 				*M_Hp -= (power * health / 100) / sqrt(*M_Hp);
 				if (*unitattacked_m->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_m);
@@ -32,7 +32,7 @@ void EarthTank::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 			{
 				armyA->getAS_List().dequeue(unitattacked_s);
 				int* S_Hp = unitattacked_s->getHealth();
-				cout << "\n\n Tank with ID: " << this->getID() << " shoots " << unitattacked_s->getID() << "\n\n";
+				cout << "\n ET: [" << this->getID() << "] shoots AS: [" << unitattacked_s->getID() << "]" << "\n";
 				*S_Hp -= (power * health / 100) / sqrt(*S_Hp);
 				if (*unitattacked_s->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_s);
@@ -46,7 +46,7 @@ void EarthTank::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 			{
 				armyA->getAM_List().pop(unitattacked_m);
 				int* M_Hp = unitattacked_m->getHealth();
-				cout << "\n\n Tank with ID: " << this->getID() << " shoots " << unitattacked_m->getID() << "\n\n";
+				cout << "\n ET: [" << this->getID() << "] shoots AM: [" << unitattacked_m->getID() << "]" << "\n";
 				*M_Hp -= (power * health / 100) / sqrt(*M_Hp);
 				if (*unitattacked_m->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_m);
@@ -60,7 +60,7 @@ void EarthTank::Attack(GameRules* game, AlienArmy* armyA, EarthArmy* armyE)
 			{
 				armyA->getAM_List().pop(unitattacked_m);
 				int* M_Hp = unitattacked_m->getHealth();
-				cout << "\n\n Tank with ID: " << this->getID() << " shoots " << unitattacked_m->getID() << "\n\n";
+				cout << "\n ET: [" << this->getID() << "] shoots AM: [" << unitattacked_m->getID() << "]" << "\n";
 				*M_Hp -= (power * health / 100) / sqrt(*M_Hp);
 				if (*unitattacked_m->getHealth() <= 0)
 					game->getkilledlist().enqueue(unitattacked_m);
