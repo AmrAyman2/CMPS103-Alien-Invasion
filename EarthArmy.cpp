@@ -154,11 +154,12 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 		earthgunnery->Attack(game, alien);
 		EG_List.enqueue(earthgunnery);
 	}
+	*/
 	for (int i = 0; i < ET_Count(); i++) {
 		ET_List.pop(earthtank);
-		earthtank->Attack(game, alien);
+		earthtank->Attack(game, alien, this);
 		ET_List.push(earthtank);
-	}*/
+	}
 	if (!HU_List.isEmpty())
 	{
 		HU_List.pop(Alaadin);

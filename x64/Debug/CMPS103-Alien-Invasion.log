@@ -1,6 +1,6 @@
-﻿  AlienArmy.cpp
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(23,16): warning C4101: 'alienmonster': unreferenced local variable
-C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\AlienArmy.cpp(22,14): warning C4101: 'aliendrone': unreferenced local variable
-  main.cpp
-  Generating Code...
-  CMPS103-Alien-Invasion.vcxproj -> C:\Users\tvkut\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe
+﻿  EarthTank.cpp
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(25,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(37,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(51,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\ArmyUnits\Earth\EarthTank.cpp(65,37): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  CMPS103-Alien-Invasion.vcxproj -> C:\Users\Omar\source\repos\CMPS103-Alien-Invasion\x64\Debug\CMPS103-Alien-Invasion.exe

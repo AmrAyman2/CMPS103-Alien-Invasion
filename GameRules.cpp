@@ -4,9 +4,12 @@
 using namespace std;
 
 GameRules::GameRules(EarthArmy& e, AlienArmy& a, Input& i) {
-	*myEarth = e;
-	*myAlien = a;
-	*myI = i;
+	//myEarth = e;
+	//*myAlien = a;
+	//*myI = i;
+	myEarth = &e;
+	myAlien = &a;
+	myI = &i;
 }
 
 int GameRules::getDeadCount()
@@ -40,11 +43,13 @@ void GameRules::printDeadList() {
 }
 void GameRules::War() {
 	Generator myGen(myI, myEarth, myAlien, this);
-	while (timeStep <= 40)
+
+	while (timeStep <= 500)
 	{
+		cout << "\n\n\t ============ Time Step " << timeStep << " =============\n\n";
 		myGen.generateEarth();
 		myGen.generateAlien();
-		//Attack Logic
+		/* ------- Attacking Logic ------- */
 		myEarth->Attack(this, myAlien);
 		myAlien->Attack(this, myEarth);
 		myEarth->print();
@@ -52,33 +57,34 @@ void GameRules::War() {
 		printDeadList();
 		timeStep++;
 	}
-	if (timeStep > 40)
-	{
-		while (!Victory)
-		{
-			myGen.generateEarth();
-			myGen.generateAlien();
-			//Attack Logic
-			myEarth->Attack(this, myAlien);
-			myAlien->Attack(this, myEarth);
-			myEarth->print();
-			myAlien->print();
-			printDeadList();
-			if (myEarth->getTotalCount() > 0 && myAlien->getTotalCount() == 0)
-			{
-				Winner = "Earth Army";
-				Victory = true;
-				cout << "Winner Winner Chicken Dinner:: Planet Earth" << endl;
-			}
-			else if (myAlien->getTotalCount() > 0 && myEarth->getTotalCount() == 0)
-			{
-				Winner = "Alien Army";
-				Victory = true;
-				cout << "Winner Winner Chicken Dinner:: Planet ET" << endl;
-			}
-			timeStep++;
-		}
-	}
+	//if (timeStep > 100)
+	//{
+	//	while (timeStep < 100)
+	//	{
+	//		cout << "\n\n\t ============ Time Step " << timeStep << " =============\n\n";
+	//		myGen.generateEarth();
+	//		myGen.generateAlien();
+	//		//Attack Logic
+	//		myEarth->Attack(this, myAlien);
+	//		myAlien->Attack(this, myEarth);
+	//		myEarth->print();
+	//		myAlien->print();
+	//		printDeadList();
+	//		if (myEarth->getTotalCount() > 0 && myAlien->getTotalCount() == 0)
+	//		{
+	//			Winner = "Earth Army";
+	//			Victory = true;
+	//			cout << "Winner Winner Chicken Dinner:: Planet Earth" << endl;
+	//		}
+	//		else if (myAlien->getTotalCount() > 0 && myEarth->getTotalCount() == 0)
+	//		{
+	//			Winner = "Alien Army";
+	//			Victory = true;
+	//			cout << "Winner Winner Chicken Dinner:: Planet ET" << endl;
+	//		}
+	//		timeStep++;
+	//	}
+	//}
 }
 
 
