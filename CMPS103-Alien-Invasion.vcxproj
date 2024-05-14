@@ -137,6 +137,7 @@
     <ClInclude Include="ADS\QueueADT.h" />
     <ClInclude Include="ADS\StackADT.h" />
     <ClInclude Include="AlienArmy.h" />
+    <ClInclude Include="AllyArmy.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienDrone.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienMonster.h" />
     <ClInclude Include="ArmyUnits\Alien\AlienSoldier.h" />
@@ -149,9 +150,11 @@
     <ClInclude Include="Generator.h" />
     <ClInclude Include="ArmyUnits\Earth\Healer.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="ArmyUnits\Earth\Saver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlienArmy.cpp" />
+    <ClCompile Include="AllyArmy.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienDrone.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienMonster.cpp" />
     <ClCompile Include="ArmyUnits\Alien\AlienSoldier.cpp" />
@@ -165,6 +168,7 @@
     <ClCompile Include="ArmyUnits\Earth\Healer.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ArmyUnits\Earth\Saver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

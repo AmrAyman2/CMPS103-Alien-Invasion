@@ -82,13 +82,32 @@ int EarthArmy::EG_Count()
 
 void EarthArmy::EG_PrintID()
 {
-	cout << ET_Count() << " Earth Gunneries " << endl;
+	cout << EG_Count() << " Earth Gunneries " << endl;
 	getEG_List().print();
+}
+
+int EarthArmy::HU_Count()
+{
+	ArrayStack<Healer*> temp(HU_List);
+	int HUcount = 0;
+	Healer* temppointer;
+	while (!temp.isEmpty()) {
+		temp.pop(temppointer);
+		HUcount++;
+	}
+	return HUcount;
+}
+
+void EarthArmy::HU_PrintID()
+{
+	ArrayStack<Healer*> temp(HU_List);
+	cout << HU_Count() << " Healer units " << endl;
+	temp.print();
 }
 
 int EarthArmy::getTotalCount()
 {
-	return (ES_Count() + ET_Count() + EG_Count());
+	return (ES_Count() + ET_Count() + EG_Count()+ HU_Count());
 }
 
 void EarthArmy::print()
@@ -97,6 +116,7 @@ void EarthArmy::print()
 	ES_PrintID();
 	ET_PrintID();
 	EG_PrintID();
+	HU_PrintID();
 }
 
 void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
@@ -112,11 +132,11 @@ void EarthArmy::Attack(GameRules* game,AlienArmy* alien)
 		ES_List.enqueue(earthsold);
 	}
 	/*for (int i = 0; i < EG_Count(); i++) {
-		EG_List.dequeue(earthgunnery);
+		int pri;
+		EG_List.dequeue(earthgunnery,pri);
 		earthgunnery->Attack(game, alien);
-		EG_List.enqueue(earthgunnery);
-	}
-	*/
+		EG_List.enqueue(earthgunnery,pri);
+	}*/
 	for (int i = 0; i < ET_Count(); i++) {
 		int mode = rand() % (100) + 1;
 		if (mode > game->getInput().getVirus_prob())
@@ -151,6 +171,11 @@ ArrayStack<EarthTank*>& EarthArmy::getET_List()
 priQueue<EarthGunnery*>& EarthArmy::getEG_List()
 {
 	return EG_List;
+}
+
+ArrayStack<Healer*>& EarthArmy::getHU_List()
+{
+	return HU_List;
 }
 
 priQueue<ArmyUnit*>& EarthArmy::getUML()

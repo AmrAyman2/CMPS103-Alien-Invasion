@@ -10,5 +10,3 @@ class AlienMonster: public ArmyUnit
 		void poison(EarthArmy* army);
 		//bonus func
 };
-
-ostream& operator<<(ostream& os, const AlienMonster monster);
