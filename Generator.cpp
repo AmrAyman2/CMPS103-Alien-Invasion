@@ -93,7 +93,7 @@ void Generator::generateAlien() {
 				AlienMonster* newMonster = new AlienMonster(id,"Alien Monster",jointime,hp,power,attackcap);
 				A1->AddUnit(newMonster);
 			}
-			else
+			else if ( B > (I1->getAS() + I1->getAM()))
 			{
 				jointime=(G1->gettimeStep());
 				id=nextAlienid++;
